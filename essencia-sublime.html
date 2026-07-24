@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Essência Sublime — A essência da elegância</title>
+<meta name="description" content="Perfumes importados selecionados com curadoria especializada. Atendimento personalizado, autenticidade garantida e experiência de compra premium.">
+<meta property="og:title" content="Essência Sublime — A essência da elegância">
+<meta property="og:description" content="Perfumes importados para quem valoriza elegância e autenticidade. Curadoria especializada e atendimento personalizado.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Essência Sublime",
+  "description": "Boutique especializada em perfumes importados, com curadoria especializada e atendimento personalizado.",
+  "slogan": "A essência da elegância"
+}
+</script>
+<style>
+:root{
+  --bg:#FAF9F5;
+  --bg-alt:#F1EEE6;
+  --surface:#FFFFFF;
+  --ink:#171510;
+  --ink-soft:#5B564C;
+  --ink-faint:#8C8678;
+  --line:rgba(23,21,16,0.11);
+  --line-strong:rgba(23,21,16,0.2);
+  --gold:#A9824C;
+  --gold-deep:#7E5F35;
+  --gold-soft:rgba(169,130,76,0.14);
+  --gold-glow:rgba(169,130,76,0.35);
+  --shadow:0 30px 60px -30px rgba(23,21,16,0.25);
+  --serif:'Cormorant Garamond', serif;
+  --sans:'Jost', sans-serif;
+}
+[data-theme="dark"]{
+  --bg:#0D0C0A;
+  --bg-alt:#161410;
+  --surface:#161410;
+  --ink:#F3F0E7;
+  --ink-soft:#C7C0AE;
+  --ink-faint:#8F8877;
+  --line:rgba(243,240,231,0.12);
+  --line-strong:rgba(243,240,231,0.22);
+  --gold:#CDA867;
+  --gold-deep:#E4C285;
+  --gold-soft:rgba(205,168,103,0.16);
+  --gold-glow:rgba(205,168,103,0.4);
+  --shadow:0 30px 60px -30px rgba(0,0,0,0.6);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:300;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  transition:background .5s ease,color .5s ease;
+}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+ul{list-style:none;}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px;}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;letter-spacing:.01em;}
+.eyebrow{
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--gold-deep);
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+}
+[data-theme="dark"] .eyebrow{color:var(--gold);}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--gold);display:inline-block;}
+:focus-visible{outline:1.5px solid var(--gold);outline-offset:4px;}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
+}
+
+/* ---------- reveal on scroll ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,.8,.3,1),transform .9s cubic-bezier(.16,.8,.3,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ---------- header ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 40px;
+  background:transparent;
+  transition:background .5s ease,padding .4s ease,border-color .5s ease;
+  border-bottom:1px solid transparent;
+}
+header.scrolled{
+  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(14px);
+  padding:14px 40px;
+  border-bottom:1px solid var(--line);
+}
+.logo{
+  font-family:var(--serif);
+  font-size:24px;
+  letter-spacing:.14em;
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+.logo b{font-weight:500;}
+.logo span{font-size:8px;font-family:var(--sans);letter-spacing:.38em;color:var(--gold);margin-top:6px;text-transform:uppercase;}
+nav{display:flex;align-items:center;gap:38px;}
+nav ul{display:flex;gap:34px;}
+nav a{
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  position:relative;padding-bottom:4px;color:var(--ink-soft);
+  transition:color .3s ease;
+}
+nav a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .35s ease;}
+nav a:hover{color:var(--ink);}
+nav a:hover::after{width:100%;}
+.head-actions{display:flex;align-items:center;gap:18px;}
+.theme-toggle{
+  width:36px;height:36px;border:1px solid var(--line-strong);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  transition:border-color .3s ease,transform .3s ease;
+}
+.theme-toggle:hover{border-color:var(--gold);transform:rotate(20deg);}
+.theme-toggle svg{width:16px;height:16px;stroke:var(--ink);}
+.burger{display:none;width:36px;height:36px;flex-direction:column;justify-content:center;gap:5px;align-items:center;}
+.burger span{width:20px;height:1px;background:var(--ink);}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 30px;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  border:1px solid var(--ink);
+  transition:all .4s cubic-bezier(.16,.8,.3,1);
+  white-space:nowrap;
+}
+.btn-primary{background:var(--ink);color:var(--bg);}
+.btn-primary:hover{background:var(--gold);border-color:var(--gold);color:#100D08;letter-spacing:.26em;}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--line-strong);}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold-deep);letter-spacing:.26em;}
+[data-theme="dark"] .btn-outline:hover{color:var(--gold);}
+.btn-small{padding:11px 22px;font-size:10px;}
+.btn-gold{background:var(--gold);border-color:var(--gold);color:#100D08;}
+.btn-gold:hover{background:var(--gold-deep);border-color:var(--gold-deep);letter-spacing:.26em;}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:flex-end;
+  padding:160px 0 90px;overflow:hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 75% 20%, var(--gold-soft), transparent 60%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+}
+.hero-bottle{
+  position:absolute;right:6%;top:50%;transform:translateY(-50%);
+  width:min(34vw,460px);opacity:.9;
+  animation:floaty 8s ease-in-out infinite;
+}
+@keyframes floaty{0%,100%{transform:translateY(-50%);}50%{transform:translateY(calc(-50% - 16px));}}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:end;}
+.hero h1{font-size:clamp(38px,5vw,68px);line-height:1.06;font-weight:400;max-width:15ch;}
+.hero h1 em{font-style:italic;color:var(--gold-deep);}
+[data-theme="dark"] .hero h1 em{color:var(--gold);}
+.hero p{margin-top:26px;font-size:17px;color:var(--ink-soft);max-width:46ch;font-weight:300;}
+.hero-cta{margin-top:42px;display:flex;gap:18px;flex-wrap:wrap;}
+.hero-badges{margin-top:56px;display:flex;flex-wrap:wrap;gap:28px 40px;}
+.hero-badge{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.05em;color:var(--ink-soft);}
+.hero-badge svg{width:15px;height:15px;stroke:var(--gold);flex-shrink:0;}
+.hero-eyebrow{margin-bottom:26px;}
+.scroll-cue{
+  position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint);
+}
+.scroll-cue .line{width:1px;height:44px;background:linear-gradient(var(--gold), transparent);animation:pulse 2.4s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:.3;}50%{opacity:1;}}
+
+/* ---------- section shells ---------- */
+section{padding:130px 0;position:relative;}
+.section-alt{background:var(--bg-alt);}
+.section-head{max-width:640px;margin-bottom:64px;}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+.section-head h2{font-size:clamp(30px,3.6vw,46px);margin-top:20px;font-weight:400;}
+.section-head p{margin-top:18px;color:var(--ink-soft);font-size:16px;max-width:56ch;}
+.section-head.center p{margin-left:auto;margin-right:auto;}
+
+/* ---------- curadoria ---------- */
+.curadoria{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center;}
+.curadoria-visual{position:relative;aspect-ratio:4/5;background:var(--bg-alt);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+[data-theme="dark"] .curadoria-visual{background:var(--surface);}
+.curadoria-visual svg{width:56%;}
+.curadoria-num{position:absolute;bottom:24px;left:24px;font-family:var(--serif);font-size:13px;letter-spacing:.1em;color:var(--ink-faint);}
+.curadoria-text p{color:var(--ink-soft);margin-top:20px;font-size:16px;max-width:52ch;}
+.curadoria-text h2{font-size:clamp(28px,3.4vw,42px);}
+.pyramid-mini{display:flex;gap:26px;margin-top:44px;flex-wrap:wrap;}
+.pyramid-mini div{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);display:flex;align-items:center;gap:8px;}
+.pyramid-mini span{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+
+/* ---------- collections ---------- */
+.collections-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);}
+.coll-card{
+  position:relative;background:var(--surface);padding:56px 34px;min-height:280px;
+  display:flex;flex-direction:column;justify-content:flex-end;gap:14px;
+  cursor:pointer;overflow:hidden;transition:background .4s ease;
+}
+.coll-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(160deg, var(--gold-soft), transparent 60%);
+  opacity:0;transition:opacity .5s ease;
+}
+.coll-card:hover::before{opacity:1;}
+.coll-card:hover{background:var(--bg-alt);}
+.coll-card .cnum{font-family:var(--serif);font-size:14px;color:var(--ink-faint);position:relative;z-index:1;}
+.coll-card h3{font-size:26px;font-weight:400;position:relative;z-index:1;}
+.coll-card small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);position:relative;z-index:1;}
+[data-theme="dark"] .coll-card small{color:var(--gold);}
+.coll-arrow{position:absolute;top:32px;right:32px;width:30px;height:30px;border:1px solid var(--line-strong);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .4s ease;z-index:1;}
+.coll-card:hover .coll-arrow{border-color:var(--gold);transform:rotate(45deg);background:var(--gold);}
+.coll-arrow svg{width:12px;height:12px;stroke:var(--ink);transition:stroke .3s;}
+.coll-card:hover .coll-arrow svg{stroke:#100D08;}
+
+/* ---------- catalog ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:48px;}
+.filter-chip{
+  padding:10px 22px;border:1px solid var(--line-strong);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  transition:all .3s ease;
+}
+.filter-chip.active,.filter-chip:hover{border-color:var(--gold);background:var(--gold-soft);color:var(--gold-deep);}
+[data-theme="dark"] .filter-chip.active,[data-theme="dark"] .filter-chip:hover{color:var(--gold);}
+.catalog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:30px;}
+.p-card{
+  background:var(--surface);border:1px solid var(--line);
+  display:flex;flex-direction:column;
+  transition:transform .5s cubic-bezier(.16,.8,.3,1),box-shadow .5s ease,border-color .4s ease;
+}
+.p-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--line-strong);}
+.p-media{aspect-ratio:3/4;position:relative;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.p-media svg{width:44%;transition:transform .6s cubic-bezier(.16,.8,.3,1);}
+.p-card:hover .p-media svg{transform:scale(1.06) translateY(-4px);}
+.p-tag{position:absolute;top:14px;left:14px;font-size:9px;letter-spacing:.16em;text-transform:uppercase;padding:6px 10px;background:var(--ink);color:var(--bg);}
+.p-body{padding:22px 22px 26px;display:flex;flex-direction:column;gap:6px;flex:1;}
+.p-brand{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);}
+[data-theme="dark"] .p-brand{color:var(--gold);}
+.p-name{font-family:var(--serif);font-size:22px;cursor:pointer;}
+.p-family{font-size:12px;color:var(--ink-faint);}
+.p-foot{margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.p-invest{font-size:11px;color:var(--ink-faint);letter-spacing:.03em;}
+.catalog-more{display:flex;justify-content:center;margin-top:56px;}
+
+/* ---------- quiz ---------- */
+.quiz-box{
+  max-width:720px;margin:0 auto;background:var(--surface);border:1px solid var(--line);
+  padding:clamp(30px,5vw,64px);position:relative;
+}
+.quiz-progress{display:flex;gap:8px;margin-bottom:40px;}
+.quiz-progress i{flex:1;height:2px;background:var(--line-strong);position:relative;overflow:hidden;}
+.quiz-progress i::after{content:'';position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .5s ease;}
+.quiz-progress i.done::after,.quiz-progress i.active::after{transform:scaleX(1);}
+.quiz-step{display:none;}
+.quiz-step.active{display:block;animation:fadein .6s ease;}
+@keyframes fadein{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.quiz-q{font-family:var(--serif);font-size:clamp(22px,3vw,30px);margin-bottom:30px;}
+.quiz-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;}
+.quiz-opt{
+  padding:20px 18px;border:1px solid var(--line-strong);text-align:left;font-size:14px;letter-spacing:.02em;
+  transition:all .3s ease;
+}
+.quiz-opt:hover,.quiz-opt.picked{border-color:var(--gold);background:var(--gold-soft);color:var(--gold-deep);}
+[data-theme="dark"] .quiz-opt:hover,[data-theme="dark"] .quiz-opt.picked{color:var(--gold);}
+.quiz-back{margin-top:34px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);}
+.quiz-back:hover{color:var(--gold-deep);}
+.quiz-result{display:none;}
+.quiz-result.active{display:block;animation:fadein .7s ease;}
+.quiz-result h3{font-family:var(--serif);font-size:28px;margin-bottom:8px;}
+.quiz-result>p{color:var(--ink-soft);margin-bottom:34px;}
+.quiz-result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:38px;}
+.quiz-result-card{border:1px solid var(--line);padding:18px;text-align:center;cursor:pointer;transition:border-color .3s;}
+.quiz-result-card:hover{border-color:var(--gold);}
+.quiz-result-card svg{width:60%;margin:0 auto 12px;}
+.quiz-result-card h4{font-family:var(--serif);font-size:16px;}
+.quiz-result-card small{font-size:10px;color:var(--ink-faint);letter-spacing:.06em;}
+
+/* ---------- destaque ---------- */
+.destaque-card{display:grid;grid-template-columns:.85fr 1.15fr;background:var(--surface);border:1px solid var(--line);overflow:hidden;}
+.destaque-visual{background:var(--bg-alt);display:flex;align-items:center;justify-content:center;padding:60px;position:relative;}
+.destaque-visual svg{width:70%;}
+.destaque-body{padding:clamp(34px,5vw,72px);display:flex;flex-direction:column;justify-content:center;}
+.destaque-body .eyebrow{margin-bottom:20px;}
+.destaque-body h3{font-size:clamp(28px,3.4vw,44px);margin-bottom:6px;}
+.destaque-brand{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:22px;}
+[data-theme="dark"] .destaque-brand{color:var(--gold);}
+.destaque-body p.story{color:var(--ink-soft);margin-bottom:26px;max-width:52ch;}
+.destaque-meta{display:flex;gap:34px;margin-bottom:34px;flex-wrap:wrap;}
+.destaque-meta div{font-size:11px;color:var(--ink-faint);letter-spacing:.06em;}
+.destaque-meta b{display:block;font-family:var(--serif);font-size:16px;color:var(--ink);font-weight:400;margin-top:4px;}
+
+/* ---------- why ---------- */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+.why-item{background:var(--surface);padding:48px 36px;}
+.why-item svg{width:30px;height:30px;stroke:var(--gold);margin-bottom:24px;}
+.why-item h4{font-family:var(--serif);font-size:20px;margin-bottom:10px;font-weight:400;}
+.why-item p{font-size:14px;color:var(--ink-soft);}
+
+/* ---------- faq ---------- */
+.faq-list{max-width:780px;margin:0 auto;border-top:1px solid var(--line);}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:28px 4px;text-align:left;font-family:var(--serif);font-size:19px;}
+.faq-q .plus{width:20px;height:20px;position:relative;flex-shrink:0;margin-left:20px;}
+.faq-q .plus::before,.faq-q .plus::after{content:'';position:absolute;background:var(--gold-deep);transition:transform .4s ease;}
+[data-theme="dark"] .faq-q .plus::before,[data-theme="dark"] .faq-q .plus::after{background:var(--gold);}
+.faq-q .plus::before{left:0;top:50%;width:100%;height:1px;transform:translateY(-50%);}
+.faq-q .plus::after{top:0;left:50%;width:1px;height:100%;transform:translateX(-50%);}
+.faq-item.open .plus::after{transform:translateX(-50%) rotate(90deg);opacity:0;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s ease;}
+.faq-a-in{padding:0 4px 28px;color:var(--ink-soft);max-width:64ch;font-size:15px;}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:var(--bg);padding:90px 0 30px;}
+[data-theme="dark"] footer{background:#050403;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px;padding-bottom:60px;border-bottom:1px solid rgba(250,249,245,0.14);}
+footer .logo{color:var(--bg);}
+footer .logo span{color:var(--gold);}
+.footer-tag{margin-top:20px;font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(250,249,245,0.6);}
+.footer-col h5{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;}
+.footer-col a,.footer-col p{display:block;font-size:14px;color:rgba(250,249,245,0.72);margin-bottom:13px;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{padding-top:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:12px;color:rgba(250,249,245,0.42);}
+
+/* ---------- whatsapp float ---------- */
+.wa-float{
+  position:fixed;bottom:28px;right:28px;z-index:600;
+  width:56px;height:56px;border-radius:50%;background:var(--gold);
+  display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.3);
+  transition:transform .3s ease;
+}
+.wa-float:hover{transform:scale(1.08);}
+.wa-float svg{width:26px;height:26px;fill:#100D08;}
+
+/* ---------- perfume detail overlay ---------- */
+.overlay{
+  position:fixed;inset:0;z-index:900;background:var(--bg);
+  overflow-y:auto;transform:translateY(100%);transition:transform .6s cubic-bezier(.16,.8,.3,1);
+}
+.overlay.open{transform:translateY(0);}
+.overlay-inner{max-width:1160px;margin:0 auto;padding:120px 32px 100px;}
+.overlay-close{
+  position:fixed;top:26px;right:32px;z-index:901;width:46px;height:46px;border:1px solid var(--line-strong);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg);transition:border-color .3s;
+}
+.overlay-close:hover{border-color:var(--gold);}
+.overlay-close svg{width:16px;height:16px;stroke:var(--ink);}
+.detail-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;}
+.detail-visual{background:var(--bg-alt);border:1px solid var(--line);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;position:sticky;top:110px;height:fit-content;}
+.detail-visual svg{width:50%;}
+.detail-brand{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);}
+[data-theme="dark"] .detail-brand{color:var(--gold);}
+.detail-title{font-size:clamp(32px,4.5vw,52px);margin:10px 0 20px;}
+.detail-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px;}
+.detail-badges span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;border:1px solid var(--line-strong);color:var(--ink-soft);}
+.detail-story{color:var(--ink-soft);font-size:16px;max-width:60ch;margin-bottom:40px;}
+.detail-block{margin-bottom:40px;}
+.detail-block h4{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:18px;}
+[data-theme="dark"] .detail-block h4{color:var(--gold);}
+.pyramid{display:flex;flex-direction:column;gap:16px;}
+.pyramid-row{display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:14px;}
+.pyramid-row span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);}
+.pyramid-row p{font-family:var(--serif);font-size:18px;}
+.detail-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 30px;}
+.detail-facts div{font-size:12px;color:var(--ink-faint);letter-spacing:.04em;}
+.detail-facts b{display:block;font-family:var(--serif);font-size:17px;color:var(--ink);font-weight:400;margin-top:4px;}
+.detail-cta{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;}
+.similar-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:16px;}
+.similar-card{cursor:pointer;border:1px solid var(--line);padding:16px;text-align:center;transition:border-color .3s;}
+.similar-card:hover{border-color:var(--gold);}
+.similar-card svg{width:60%;margin:0 auto 10px;}
+.similar-card p{font-family:var(--serif);font-size:14px;}
+
+/* ---------- misc ---------- */
+.center-btn{display:flex;justify-content:center;margin-top:56px;}
+::selection{background:var(--gold);color:#100D08;}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  nav ul, .head-actions .btn{display:none;}
+  .burger{display:flex;}
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-bottle{position:relative;top:0;transform:none;width:60%;margin:40px auto 0;right:auto;}
+  .curadoria,.destaque-card,.detail-grid{grid-template-columns:1fr;}
+  .detail-visual{position:relative;top:0;}
+  .collections-grid,.why-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .similar-row{grid-template-columns:repeat(2,1fr);}
+  .quiz-result-grid{grid-template-columns:1fr;}
+}
+@media (max-width:600px){
+  .wrap{padding:0 20px;}
+  header{padding:18px 20px;}
+  .collections-grid,.why-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  section{padding:90px 0;}
+  .destaque-visual{padding:36px;}
+}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <a href="#home" class="logo"><b>Essência Sublime</b><span>A essência da elegância</span></a>
+  <nav>
+    <ul>
+      <li><a href="#home">Início</a></li>
+      <li><a href="#colecoes">Coleções</a></li>
+      <li><a href="#maisvendidos" data-filter="bestseller">Mais Vendidos</a></li>
+      <li><a href="#quiz">Consultoria</a></li>
+      <li><a href="#como-funciona">Como Funciona</a></li>
+      <li><a href="#faq">Perguntas Frequentes</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+  <div class="head-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo escuro">
+      <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <a href="#contato" class="btn btn-primary">Falar com consultor</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="home">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow hero-eyebrow">Boutique de perfumes importados</div>
+      <h1>Perfumes importados para quem valoriza <em>elegância</em> e autenticidade.</h1>
+      <p>Na Essência Sublime você encontra uma seleção criteriosa dos perfumes mais desejados do mundo, com atendimento personalizado e uma experiência de compra feita para quem aprecia qualidade e sofisticação.</p>
+      <div class="hero-cta">
+        <a href="#quiz" class="btn btn-primary">Descobrir minha fragrância ideal</a>
+        <a href="#catalogo" class="btn btn-outline">Explorar coleção</a>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>Perfumes Originais</div>
+        <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>Curadoria Especializada</div>
+        <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>Atendimento Personalizado</div>
+        <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>Compra Segura</div>
+      </div>
+    </div>
+    <div class="hero-bottle">
+      <svg viewBox="0 0 220 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="80" y="20" width="60" height="34" rx="4" fill="var(--gold)"/>
+        <rect x="95" y="0" width="30" height="26" rx="3" fill="var(--ink)"/>
+        <path d="M60 54 C60 54 50 80 50 110 L50 380 C50 400 66 414 110 414 C154 414 170 400 170 380 L170 110 C170 80 160 54 160 54 Z" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.5"/>
+        <rect x="66" y="150" width="88" height="120" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="1"/>
+        <text x="110" y="205" font-family="Cormorant Garamond, serif" font-size="17" fill="var(--gold-deep)" text-anchor="middle" letter-spacing="2">ESSÊNCIA</text>
+        <text x="110" y="228" font-family="Cormorant Garamond, serif" font-size="17" fill="var(--gold-deep)" text-anchor="middle" letter-spacing="2">SUBLIME</text>
+        <line x1="86" y1="240" x2="134" y2="240" stroke="var(--gold)" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Explorar</span><span class="line"></span></div>
+</section>
+
+<!-- CURADORIA -->
+<section id="curadoria">
+  <div class="wrap curadoria reveal">
+    <div class="curadoria-visual">
+      <svg viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M70 8h60v28H70z" fill="var(--ink)" opacity=".85"/>
+        <path d="M55 36c0 0-14 26-14 54v122c0 12 22 20 59 20s59-8 59-20V90c0-28-14-54-14-54Z" fill="var(--surface)" stroke="var(--gold)" stroke-width="1.2"/>
+        <circle cx="100" cy="150" r="34" fill="none" stroke="var(--gold)" stroke-width="1"/>
+        <circle cx="100" cy="150" r="3" fill="var(--gold)"/>
+      </svg>
+      <div class="curadoria-num">01 — Curadoria</div>
+    </div>
+    <div class="curadoria-text">
+      <div class="eyebrow">Nossa Curadoria</div>
+      <h2>Perfume é personalidade. É memória. É identidade.</h2>
+      <p>Cada fragrância carrega uma assinatura: o instante em que alguém se lembra de você antes mesmo de te ver. A Essência Sublime nasceu para transformar essa busca em uma experiência simples e confiável — reunindo, em um só lugar, as fragrâncias mais desejadas do mundo com a seriedade que esse gesto merece.</p>
+      <p>Selecionamos cada perfume observando família olfativa, fixação, projeção e ocasião de uso, para que sua escolha vá além do frasco: que ela conte algo sobre quem você é.</p>
+      <div class="pyramid-mini">
+        <div><span></span>Notas de Topo</div>
+        <div><span></span>Notas de Coração</div>
+        <div><span></span>Notas de Fundo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLECOES -->
+<section id="colecoes" class="section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Coleções</div>
+      <h2>Encontre a coleção certa para o seu momento</h2>
+    </div>
+    <div class="collections-grid reveal" id="collectionsGrid"></div>
+  </div>
+</section>
+
+<!-- CATALOGO -->
+<section id="catalogo">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Catálogo</div>
+      <h2>Fragrâncias selecionadas</h2>
+      <p>Consulte a ficha completa de cada perfume e solicite um orçamento atualizado diretamente com nossa consultoria.</p>
+    </div>
+    <div class="filters reveal" id="filters"></div>
+    <div class="catalog-grid reveal" id="catalogGrid"></div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="section-alt">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow">Consultoria personalizada</div>
+      <h2>Descubra seu perfume ideal</h2>
+      <p>Responda quatro perguntas rápidas e receba uma recomendação personalizada da nossa curadoria.</p>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-progress">
+        <i data-i="0" class="active"></i><i data-i="1"></i><i data-i="2"></i><i data-i="3"></i>
+      </div>
+
+      <div class="quiz-step active" data-step="0">
+        <div class="quiz-q">Para quem é o perfume?</div>
+        <div class="quiz-options">
+          <button class="quiz-opt" data-q="target" data-v="m">Homem</button>
+          <button class="quiz-opt" data-q="target" data-v="f">Mulher</button>
+          <button class="quiz-opt" data-q="target" data-v="presente">Presente</button>
+        </div>
+      </div>
+
+      <div class="quiz-step" data-step="1">
+        <div class="quiz-q">Qual estilo combina com você?</div>
+        <div class="quiz-options">
+          <button class="quiz-opt" data-q="style" data-v="Elegante">Elegante</button>
+          <button class="quiz-opt" data-q="style" data-v="Sedutor">Sedutor</button>
+          <button class="quiz-opt" data-q="style" data-v="Executivo">Executivo</button>
+          <button class="quiz-opt" data-q="style" data-v="Moderno">Moderno</button>
+          <button class="quiz-opt" data-q="style" data-v="Clássico">Clássico</button>
+          <button class="quiz-opt" data-q="style" data-v="Casual">Casual</button>
+        </div>
+        <button class="quiz-back" data-back>← Voltar</button>
+      </div>
+
+      <div class="quiz-step" data-step="2">
+        <div class="quiz-q">Qual a ocasião principal?</div>
+        <div class="quiz-options">
+          <button class="quiz-opt" data-q="occ" data-v="Trabalho">Trabalho</button>
+          <button class="quiz-opt" data-q="occ" data-v="Encontro">Encontro</button>
+          <button class="quiz-opt" data-q="occ" data-v="Festa">Festa</button>
+          <button class="quiz-opt" data-q="occ" data-v="Uso diário">Uso diário</button>
+          <button class="quiz-opt" data-q="occ" data-v="Casamento">Casamento</button>
+        </div>
+        <button class="quiz-back" data-back>← Voltar</button>
+      </div>
+
+      <div class="quiz-step" data-step="3">
+        <div class="quiz-q">Qual intensidade você prefere?</div>
+        <div class="quiz-options">
+          <button class="quiz-opt" data-q="int" data-v="Suave">Suave</button>
+          <button class="quiz-opt" data-q="int" data-v="Moderada">Moderada</button>
+          <button class="quiz-opt" data-q="int" data-v="Marcante">Marcante</button>
+        </div>
+        <button class="quiz-back" data-back>← Voltar</button>
+      </div>
+
+      <div class="quiz-result" id="quizResult">
+        <h3>Sua seleção personalizada</h3>
+        <p>Com base no seu perfil, estas são as fragrâncias que mais combinam com você:</p>
+        <div class="quiz-result-grid" id="quizResultGrid"></div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+          <a href="#" id="quizWaBtn" target="_blank" class="btn btn-gold">Receber consultoria personalizada pelo WhatsApp</a>
+          <button class="btn btn-outline" id="quizRestart">Refazer teste</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTAQUE -->
+<section id="destaque">
+  <div class="wrap reveal">
+    <div class="section-head">
+      <div class="eyebrow">Perfume em destaque</div>
+      <h2>A escolha da nossa curadoria esta semana</h2>
+    </div>
+    <div class="destaque-card" id="destaqueCard"></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="como-funciona" class="section-alt">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow">Como funciona</div>
+      <h2>Por que escolher a Essência Sublime?</h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><path d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.4 5.7 21l2.3-7.2-6-4.6h7.6z"/></svg>
+        <h4>Perfumes Originais</h4>
+        <p>Cada fragrância passa por rigorosa verificação de autenticidade antes de chegar até você.</p>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+        <h4>Curadoria Especializada</h4>
+        <p>Selecionamos apenas fragrâncias com histórico de excelência olfativa e fixação comprovada.</p>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <h4>Atendimento Humanizado</h4>
+        <p>Uma consultoria real, pensada para te ajudar a escolher — não apenas para vender.</p>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+        <h4>Experiência Premium</h4>
+        <p>Do primeiro contato à entrega, cada etapa é pensada para transmitir sofisticação.</p>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>
+        <h4>Compra Segura</h4>
+        <p>Processo transparente, com acompanhamento direto e comunicação clara em cada etapa.</p>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><path d="M21 11.5a8.5 8.5 0 1 1-4.4-7.4L21 3l-1.1 4.4"/></svg>
+        <h4>Atendimento Personalizado</h4>
+        <p>Recomendações sob medida, respeitando seu estilo, ocasião e preferências olfativas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow">Dúvidas frequentes</div>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq-list reveal" id="faqList"></div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" class="section-alt">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <div class="eyebrow">Fale conosco</div>
+      <h2>Pronta para encontrar sua fragrância ideal?</h2>
+      <p>Nossa consultoria está disponível para te ajudar a escolher o perfume perfeito, com orçamento atualizado e atendimento exclusivo.</p>
+    </div>
+    <div class="center-btn reveal">
+      <a href="#" id="ctaWaBtn" target="_blank" class="btn btn-primary">Falar com a consultoria pelo WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#home" class="logo"><b>Essência Sublime</b><span>Boutique de perfumes importados</span></a>
+        <p class="footer-tag">"A essência da elegância."</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navegação</h5>
+        <a href="#colecoes">Coleções</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#quiz">Consultoria</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <a href="#" id="footerWaLink" target="_blank">WhatsApp</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+        <p>Atendimento: Seg. a Sáb., 9h às 19h</p>
+      </div>
+      <div class="footer-col">
+        <h5>Boutique</h5>
+        <p>Atendimento personalizado e consultivo, com envio para todo o Brasil.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Essência Sublime. Todos os direitos reservados.</span>
+      <span>"A essência da elegância."</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="waFloat" target="_blank" class="wa-float" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16.02 3C9.4 3 4 8.38 4 15c0 2.34.66 4.5 1.8 6.35L4 29l7.85-1.75A11.9 11.9 0 0 0 16.02 27C22.63 27 28 21.62 28 15S22.63 3 16.02 3zm6.3 16.9c-.28.78-1.6 1.5-2.2 1.58-.6.08-1.3.36-4.4-.92-3.7-1.5-6.1-5.3-6.3-5.55-.19-.26-1.5-1.98-1.5-3.78 0-1.8.94-2.68 1.28-3.05.33-.36.73-.45.98-.45.24 0 .49 0 .7.01.23.01.53-.09.83.63.3.74 1.03 2.55 1.12 2.73.09.19.15.4.03.65-.12.26-.18.42-.36.65-.18.22-.38.5-.54.67-.18.19-.37.4-.16.77.21.36.94 1.55 2.02 2.51 1.39 1.24 2.56 1.62 2.93 1.8.37.19.58.16.8-.1.22-.26.94-1.1 1.19-1.48.25-.38.5-.31.83-.19.34.13 2.13 1 2.5 1.19.36.18.6.27.69.42.09.15.09.86-.19 1.64z"/></svg>
+</a>
+
+<!-- PERFUME DETAIL OVERLAY -->
+<div class="overlay" id="detailOverlay">
+  <button class="overlay-close" id="overlayClose" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  <div class="overlay-inner" id="overlayContent"></div>
+</div>
+
+<script>
+const WHATSAPP_NUMBER = "5500000000000";
+
+function waLink(msg){
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+}
+
+const PERFUMES = [
+{id:'212-men',n:'212 Men EDT',b:'Carolina Herrera',g:'m',vol:'100ml',fam:'Aromático Fougère',
+ top:'Bergamota, Toranja, Folhas Verdes',heart:'Cardamomo, Salvia, Coentro',base:'Almíscar, Sândalo, Cedro',
+ fix:'Média',proj:'Moderada',occ:['Trabalho','Uso diário'],seas:['Primavera','Verão'],
+ style:['Moderno','Casual'],int:'Suave',
+ profile:'Homens modernos que preferem uma fragrância limpa, urbana e discreta para o dia a dia.',
+ story:'Lançado como símbolo da atitude descontraída de Nova York, 212 Men traduz energia urbana em um aromático fresco que acompanha o ritmo da cidade.',
+ cats:['bestseller']},
+{id:'212-vip-black',n:'212 VIP Black',b:'Carolina Herrera',g:'m',vol:'100ml',fam:'Oriental Amadeirado',
+ top:'Café, Anis',heart:'Absinto, Especiarias',base:'Couro, Fava Tonka, Madeiras',
+ fix:'Alta',proj:'Forte',occ:['Festa','Encontro'],seas:['Outono','Inverno'],
+ style:['Sedutor','Moderno'],int:'Marcante',
+ profile:'Para noites intensas: um homem confiante que não passa despercebido.',
+ story:'Inspirado na vida noturna vibrante, 212 VIP Black concentra café e especiarias em uma trilha envolvente feita para durar até o amanhecer.',
+ cats:[]},
+{id:'invictus',n:'Invictus EDT',b:'Paco Rabanne',g:'m',vol:'100ml',fam:'Aquático Amadeirado',
+ top:'Toranja, Água Marinha',heart:'Louro, Jasmim',base:'Âmbar-cinza, Patchouli, Madeiras',
+ fix:'Média-Alta',proj:'Forte',occ:['Uso diário','Encontro'],seas:['Primavera','Verão'],
+ style:['Moderno','Casual'],int:'Moderada',
+ profile:'Espírito vencedor e esportivo, para quem vive em movimento.',
+ story:'Batizado em homenagem à força interior, Invictus une frescor aquático a uma base amadeirada que celebra conquistas diárias.',
+ cats:['bestseller']},
+{id:'one-million',n:'One Million EDT',b:'Paco Rabanne',g:'m',vol:'100ml',fam:'Oriental Especiado',
+ top:'Toranja, Menta, Sangue de Mandarina',heart:'Canela, Especiarias, Rosa',base:'Couro, Âmbar, Madeiras',
+ fix:'Alta',proj:'Intensa',occ:['Festa','Encontro'],seas:['Outono','Inverno'],
+ style:['Sedutor','Moderno'],int:'Marcante',
+ profile:'Magnetismo puro: uma assinatura para quem gosta de ser lembrado.',
+ story:'Com o icônico frasco em formato de lingote, One Million tornou-se sinônimo de sedução e sucesso desde seu lançamento.',
+ cats:['bestseller']},
+{id:'sauvage',n:'Dior Sauvage EDT',b:'Dior',g:'m',vol:'100ml',fam:'Fresco Amadeirado Especiado',
+ top:'Bergamota da Calábria, Pimenta',heart:'Lavanda, Pimenta-rosa, Vetiver',base:'Ambroxan, Cedro, Labdanum',
+ fix:'Alta',proj:'Forte',occ:['Trabalho','Uso diário','Encontro'],seas:['Primavera','Outono'],
+ style:['Elegante','Moderno','Executivo'],int:'Moderada',
+ profile:'O equilíbrio perfeito entre frescor e presença — o mais versátil dos ícones modernos.',
+ story:'Inspirado em céus abertos e paisagens selvagens, Sauvage tornou-se um dos perfumes masculinos mais desejados do mundo, com uma trilha limpa e magnética.',
+ cats:['bestseller']},
+{id:'bleu-chanel',n:'Bleu de Chanel EDT',b:'Chanel',g:'m',vol:'100ml',fam:'Amadeirado Aromático',
+ top:'Limão, Hortelã, Pimenta-rosa',heart:'Gengibre, Noz-moscada, Jasmim',base:'Incenso, Vetiver, Cedro, Sândalo',
+ fix:'Alta',proj:'Moderada',occ:['Trabalho','Encontro','Casamento'],seas:['Outono','Inverno'],
+ style:['Elegante','Executivo','Clássico'],int:'Moderada',
+ profile:'Sofisticação atemporal para o homem que valoriza discrição com presença.',
+ story:'Bleu de Chanel representa a liberdade de um homem que rompe com as expectativas — uma fragrância amadeirada de elegância indiscutível.',
+ cats:['bestseller']},
+{id:'acqua-di-gio',n:'Acqua di Giò EDT',b:'Giorgio Armani',g:'m',vol:'100ml',fam:'Aquático Fresco',
+ top:'Bergamota, Neroli, Notas Marinhas',heart:'Jasmim, Cyclamen, Alecrim',base:'Almíscar Branco, Patchouli, Cedro',
+ fix:'Média',proj:'Moderada',occ:['Uso diário','Trabalho'],seas:['Primavera','Verão'],
+ style:['Casual','Clássico'],int:'Suave',
+ profile:'A brisa do Mediterrâneo em forma de perfume — leve, limpo e atemporal.',
+ story:'Inspirado na ilha de Pantelleria, Acqua di Giò traduz o encontro entre mar e sol em uma fragrância aquática que se tornou um clássico absoluto.',
+ cats:[]},
+{id:'le-male',n:'Le Male Le Parfum',b:'Jean Paul Gaultier',g:'m',vol:'100ml',fam:'Oriental Amadeirado',
+ top:'Lavanda, Baunilha',heart:'Cacau, Especiarias',base:'Fava Tonka, Âmbar, Madeiras',
+ fix:'Muito Alta',proj:'Intensa',occ:['Festa','Encontro'],seas:['Outono','Inverno'],
+ style:['Sedutor','Moderno'],int:'Marcante',
+ profile:'Sensualidade envolvente com toque gourmand — para noites memoráveis.',
+ story:'Herdeiro do icônico frasco em forma de torso, esta versão intensifica a lavanda com baunilha e cacau em uma trilha profundamente sedutora.',
+ cats:[]},
+{id:'y-edp',n:'Y EDP',b:'Yves Saint Laurent',g:'m',vol:'100ml',fam:'Amadeirado Aromático',
+ top:'Maçã, Bergamota, Gengibre',heart:'Sálvia, Geranio',base:'Âmbar, Musgo de Carvalho, Baunilha',
+ fix:'Alta',proj:'Forte',occ:['Trabalho','Encontro'],seas:['Outono','Primavera'],
+ style:['Moderno','Executivo'],int:'Moderada',
+ profile:'Determinação e ambição traduzidas em uma fragrância contemporânea.',
+ story:'Y celebra a autenticidade masculina com uma estrutura amadeirada intensa, unindo frescor frutado e profundidade âmbar.',
+ cats:['luxo']},
+{id:'boss-bottled',n:'Boss Bottled',b:'Hugo Boss',g:'m',vol:'100ml',fam:'Amadeirado Especiado',
+ top:'Maçã, Bergamota, Ameixa',heart:'Canela, Mel, Gerânio',base:'Sândalo, Cedro, Baunilha',
+ fix:'Média-Alta',proj:'Moderada',occ:['Trabalho','Uso diário'],seas:['Outono','Inverno'],
+ style:['Executivo','Clássico'],int:'Moderada',
+ profile:'O clássico executivo — confiável, elegante e sempre presente.',
+ story:'Um símbolo de sucesso desde os anos 90, Boss Bottled combina frutas maduras e madeiras nobres em uma composição confiante.',
+ cats:[]},
+{id:'armani-code',n:'Armani Code',b:'Giorgio Armani',g:'m',vol:'100ml',fam:'Oriental Especiado',
+ top:'Limão, Bergamota',heart:'Especiarias, Flor de Laranjeira',base:'Fava Tonka, Couro, Madeiras',
+ fix:'Alta',proj:'Forte',occ:['Encontro','Festa'],seas:['Outono','Inverno'],
+ style:['Sedutor','Elegante'],int:'Marcante',
+ profile:'A senha para a sedução — misterioso, envolvente, inesquecível.',
+ story:'Como o próprio nome sugere, Armani Code é uma cifra de charme: uma fragrância envolvente criada para momentos de aproximação.',
+ cats:[]},
+{id:'montblanc-explorer',n:'Montblanc Explorer',b:'Montblanc',g:'m',vol:'100ml',fam:'Amadeirado Aromático',
+ top:'Bergamota, Pimenta-rosa',heart:'Couro, Patchouli',base:'Fava Tonka, Vetiver, Sândalo',
+ fix:'Alta',proj:'Moderada',occ:['Trabalho','Uso diário'],seas:['Outono','Inverno'],
+ style:['Executivo','Moderno'],int:'Moderada',
+ profile:'Para o homem que busca novos horizontes sem abrir mão da elegância.',
+ story:'Inspirado no espírito aventureiro, Explorer traduz jornadas e conquistas em uma fragrância amadeirada de caráter contemporâneo.',
+ cats:['presente']},
+{id:'azzaro-wanted',n:'Azzaro The Most Wanted',b:'Azzaro',g:'m',vol:'100ml',fam:'Especiado Amadeirado',
+ top:'Cardamomo, Limão',heart:'Absinto, Sálvia',base:'Fava Tonka, Baunilha, Madeiras',
+ fix:'Alta',proj:'Forte',occ:['Encontro','Festa'],seas:['Outono','Primavera'],
+ style:['Sedutor','Moderno'],int:'Marcante',
+ profile:'Magnético desde o primeiro instante — feito para atrair olhares.',
+ story:'The Most Wanted foi criado para ser irresistível, unindo especiarias vibrantes a uma base quente e envolvente.',
+ cats:['lancamento']},
+{id:'terre-hermes',n:"Terre d'Hermès",b:'Hermès',g:'m',vol:'100ml',fam:'Amadeirado Mineral',
+ top:'Laranja, Toranja, Pimenta-rosa',heart:'Gerânio, Pimenta, Patchouli',base:'Vetiver, Cedro, Benjoim',
+ fix:'Alta',proj:'Moderada',occ:['Trabalho','Casamento'],seas:['Outono','Inverno'],
+ style:['Elegante','Clássico'],int:'Moderada',
+ profile:'A relação entre o homem e a terra, traduzida em sofisticação natural.',
+ story:'Terre d\'Hermès nasceu de uma reflexão sobre a conexão do homem com a natureza, resultando em uma fragrância mineral e nobre.',
+ cats:['luxo']},
+{id:'versace-eros',n:'Versace Eros EDT',b:'Versace',g:'m',vol:'100ml',fam:'Fougère Amadeirado',
+ top:'Hortelã, Maçã Verde, Limão',heart:'Sálvia Ambrada, Canela',base:'Baunilha, Cedro, Âmbar',
+ fix:'Alta',proj:'Intensa',occ:['Festa','Encontro'],seas:['Verão','Outono'],
+ style:['Sedutor','Moderno'],int:'Marcante',
+ profile:'Paixão intensa inspirada no deus grego do amor e do desejo.',
+ story:'Eros representa a força da paixão: uma fragrância vibrante e quente que desperta confiança e desejo.',
+ cats:['bestseller']},
+{id:'good-girl',n:'Good Girl',b:'Carolina Herrera',g:'f',vol:'80ml',fam:'Floral Amadeirado',
+ top:'Amêndoa, Café, Bergamota',heart:'Jasmim Sambac, Tuberosa',base:'Cacau, Fava Tonka, Baunilha',
+ fix:'Alta',proj:'Forte',occ:['Festa','Encontro'],seas:['Outono','Inverno'],
+ style:['Sedutor','Moderno'],int:'Marcante',
+ profile:'A dualidade feminina: doce e ousada em uma só fragrância.',
+ story:'Simbolizada pelo icônico frasco em formato de salto, Good Girl celebra a mulher que abraça contradições com confiança.',
+ cats:['bestseller']},
+{id:'la-vie-est-belle',n:'La Vie Est Belle',b:'Lancôme',g:'f',vol:'75ml',fam:'Floral Gourmand',
+ top:'Groselha, Pera',heart:'Íris, Jasmim, Flor de Laranjeira',base:'Baunilha, Pralinê, Patchouli',
+ fix:'Alta',proj:'Moderada',occ:['Uso diário','Encontro'],seas:['Outono','Inverno'],
+ style:['Elegante','Clássico'],int:'Moderada',
+ profile:'Um convite à felicidade — doce, luminoso e reconfortante.',
+ story:'La Vie Est Belle é um hino à alegria de viver, com uma assinatura gourmand que se tornou instantaneamente icônica.',
+ cats:['presente']},
+{id:'libre',n:'Libre',b:'Yves Saint Laurent',g:'f',vol:'90ml',fam:'Floral Lavanda',
+ top:'Lavanda, Mandarina',heart:'Flor de Laranjeira, Jasmim',base:'Baunilha Madagascar, Almíscar Cedro',
+ fix:'Alta',proj:'Forte',occ:['Encontro','Festa'],seas:['Primavera','Outono'],
+ style:['Moderno','Sedutor'],int:'Marcante',
+ profile:'Liberdade e ousadia — para a mulher que não pede permissão.',
+ story:'Libre nasce do contraste entre a lavanda masculina e a baunilha feminina, um símbolo de liberdade sem contradições.',
+ cats:['lancamento']},
+{id:'scandal',n:'Scandal',b:'Jean Paul Gaultier',g:'f',vol:'80ml',fam:'Floral Chipre Gourmand',
+ top:'Maracujá, Groselha',heart:'Mel, Gardênia',base:'Patchouli, Caramelo Salgado',
+ fix:'Alta',proj:'Forte',occ:['Festa','Encontro'],seas:['Outono','Inverno'],
+ style:['Sedutor','Moderno'],int:'Marcante',
+ profile:'Ousadia sem pedir desculpas — para quem gosta de causar.',
+ story:'Scandal desafia convenções com uma mistura viciante de mel e frutas, em um frasco que já nasceu ícone.',
+ cats:[]},
+{id:'my-way',n:'My Way',b:'Giorgio Armani',g:'f',vol:'90ml',fam:'Floral Branco',
+ top:'Bergamota, Flor de Laranjeira',heart:'Tuberosa, Jasmim',base:'Baunilha, Cedro, Almíscar Branco',
+ fix:'Média-Alta',proj:'Moderada',occ:['Uso diário','Trabalho'],seas:['Primavera','Verão'],
+ style:['Elegante','Clássico'],int:'Suave',
+ profile:'Autenticidade e leveza para a mulher que segue seu próprio caminho.',
+ story:'My Way celebra a jornada pessoal de cada mulher com uma composição floral branca luminosa e genuína.',
+ cats:[]},
+{id:'jadore',n:"J'adore",b:'Dior',g:'f',vol:'100ml',fam:'Floral Frutado',
+ top:'Bergamota, Pera Melão',heart:'Rosa Damascena, Jasmim, Orquídea',base:'Almíscar Branco, Madeiras',
+ fix:'Alta',proj:'Moderada',occ:['Casamento','Encontro'],seas:['Primavera','Verão'],
+ style:['Elegante','Clássico'],int:'Moderada',
+ profile:'Feminilidade luminosa em sua forma mais pura e atemporal.',
+ story:'J\'adore é um buquê floral solar que celebra a mulher em toda a sua luminosidade — um clássico absoluto da perfumaria.',
+ cats:['luxo']},
+{id:'miss-dior',n:'Miss Dior',b:'Dior',g:'f',vol:'100ml',fam:'Floral Chipre',
+ top:'Laranja, Mandarina',heart:'Rosa de Grasse, Peônia',base:'Patchouli, Almíscar',
+ fix:'Alta',proj:'Moderada',occ:['Encontro','Casamento'],seas:['Primavera','Outono'],
+ style:['Elegante','Clássico'],int:'Moderada',
+ profile:'Romance parisiense em cada aplicação — delicado e inconfundível.',
+ story:'Miss Dior nasceu como uma declaração de amor à liberdade feminina, com um coração floral repleto de romantismo.',
+ cats:['luxo']},
+{id:'flowerbomb',n:'Flowerbomb',b:'Viktor & Rolf',g:'f',vol:'100ml',fam:'Floral Oriental',
+ top:'Chá Verde, Bergamota',heart:'Jasmim, Orquídea, Rosa Centifólia',base:'Pralinê, Patchouli, Baunilha',
+ fix:'Alta',proj:'Forte',occ:['Festa','Encontro'],seas:['Outono','Inverno'],
+ style:['Sedutor','Moderno'],int:'Marcante',
+ profile:'Uma explosão floral pensada para transformar o dia em algo extraordinário.',
+ story:'Como o nome sugere, Flowerbomb é uma verdadeira bomba floral — intensa, viciante e impossível de ignorar.',
+ cats:['presente']},
+{id:'black-opium',n:'Black Opium',b:'Yves Saint Laurent',g:'f',vol:'90ml',fam:'Oriental Gourmand',
+ top:'Café, Pera',heart:'Jasmim, Flor de Laranjeira',base:'Baunilha, Patchouli, Cedro',
+ fix:'Alta',proj:'Forte',occ:['Festa','Encontro'],seas:['Outono','Inverno'],
+ style:['Sedutor','Moderno'],int:'Marcante',
+ profile:'Viciante como café à noite — energia e sedução em uma só nota.',
+ story:'Black Opium nasceu da fusão entre café e baunilha, criando um vício olfativo que se tornou referência instantânea.',
+ cats:['bestseller']},
+{id:'alien',n:'Alien',b:'Mugler',g:'f',vol:'90ml',fam:'Floral Amadeirado Âmbar',
+ top:'Jasmim Sambac',heart:'Flor de Cashmeran',base:'Âmbar, Madeiras Brancas',
+ fix:'Alta',proj:'Forte',occ:['Festa','Encontro'],seas:['Outono','Inverno'],
+ style:['Sedutor','Moderno'],int:'Marcante',
+ profile:'Mistério e magnetismo para uma mulher fora do comum.',
+ story:'Alien representa uma nova espécie de feminilidade — intensa, mineral e completamente hipnotizante.',
+ cats:['luxo']},
+{id:'olympea',n:'Olympéa',b:'Paco Rabanne',g:'f',vol:'80ml',fam:'Floral Âmbar Salgado',
+ top:'Baunilha Verde, Mandarina',heart:'Jasmim Sambac, Flor de Laranjeira',base:'Sal, Âmbar, Cashmeran',
+ fix:'Alta',proj:'Forte',occ:['Festa','Encontro'],seas:['Outono','Inverno'],
+ style:['Sedutor','Moderno'],int:'Marcante',
+ profile:'A força de uma deusa moderna — sedução com poder.',
+ story:'Olympéa reinterpreta a mitologia grega com uma trilha âmbar salgada, poderosa e absolutamente contemporânea.',
+ cats:['lancamento']},
+{id:'212-vip-rose',n:'212 VIP Rosé',b:'Carolina Herrera',g:'f',vol:'80ml',fam:'Frutado Floral',
+ top:'Champagne Rosé, Framboesa',heart:'Petalas de Rosa',base:'Almíscar, Madeiras',
+ fix:'Média-Alta',proj:'Moderada',occ:['Festa','Encontro'],seas:['Primavera','Verão'],
+ style:['Moderno','Casual'],int:'Moderada',
+ profile:'Glamour festivo em forma de perfume — leve, doce e cintilante.',
+ story:'Inspirado nas festas mais badaladas, 212 VIP Rosé traz a efervescência do champagne rosé em uma trilha frutada irresistível.',
+ cats:['presente']},
+{id:'212-sexy',n:'212 Sexy',b:'Carolina Herrera',g:'f',vol:'60ml',fam:'Floral Almiscarado',
+ top:'Toranja, Mandarina',heart:'Orquídea, Gengibre',base:'Almíscar, Sândalo',
+ fix:'Média',proj:'Moderada',occ:['Encontro','Uso diário'],seas:['Primavera','Verão'],
+ style:['Sedutor','Casual'],int:'Moderada',
+ profile:'Sensualidade sutil para o dia a dia — confiante sem exageros.',
+ story:'212 Sexy traduz a confiança feminina em uma fragrância almiscarada envolvente, perfeita para qualquer momento.',
+ cats:[]},
+{id:'coco-mademoiselle',n:'Coco Mademoiselle',b:'Chanel',g:'f',vol:'100ml',fam:'Chipre Floral',
+ top:'Laranja, Bergamota',heart:'Rosa, Jasmim, Litchi',base:'Patchouli, Vetiver, Âmbar',
+ fix:'Alta',proj:'Moderada',occ:['Trabalho','Encontro','Casamento'],seas:['Outono','Primavera'],
+ style:['Elegante','Clássico'],int:'Moderada',
+ profile:'A elegância moderna reinventada — independente e sofisticada.',
+ story:'Coco Mademoiselle celebra a mulher livre e determinada, unindo tradição chipre a um toque jovem e vibrante.',
+ cats:['bestseller']},
+{id:'light-blue',n:'Light Blue',b:'Dolce&Gabbana',g:'f',vol:'100ml',fam:'Cítrico Floral',
+ top:'Limão Siciliano, Maçã Verde',heart:'Jasmim, Bambu',base:'Cedro, Almíscar',
+ fix:'Média',proj:'Suave',occ:['Uso diário','Trabalho'],seas:['Primavera','Verão'],
+ style:['Casual','Clássico'],int:'Suave',
+ profile:'A brisa da costa mediterrânea — fresca, leve e despretensiosa.',
+ story:'Light Blue captura a essência do verão italiano em uma fragrância cítrica que se tornou sinônimo de frescor.',
+ cats:['presente']},
+];
+
+const PMAP = Object.fromEntries(PERFUMES.map(p=>[p.id,p]));
+
+function bottleSVG(p){
+  const initials = p.n.split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();
+  return `<svg viewBox="0 0 160 260" xmlns="http://www.w3.org/2000/svg">
+    <rect x="58" y="10" width="44" height="24" rx="3" fill="var(--ink)" opacity=".85"/>
+    <rect x="68" y="0" width="24" height="18" rx="2" fill="var(--gold)"/>
+    <path d="M44 34c0 0-10 20-10 42v148c0 10 18 18 46 18s46-8 46-18V76c0-22-10-42-10-42Z" fill="var(--surface)" stroke="var(--gold)" stroke-width="1.1"/>
+    <rect x="52" y="108" width="56" height="72" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width=".8"/>
+    <text x="80" y="150" font-family="Cormorant Garamond, serif" font-size="20" fill="var(--gold-deep)" text-anchor="middle" letter-spacing="1">${initials}</text>
+  </svg>`;
+}
+
+const COLLECTIONS = [
+  {key:'m',label:'Masculinos',n:'01',desc:'Fragrâncias de caráter e presença'},
+  {key:'f',label:'Femininos',n:'02',desc:'Elegância e sensualidade em cada nota'},
+  {key:'bestseller',label:'Mais Vendidos',n:'03',desc:'As escolhas preferidas da nossa clientela'},
+  {key:'presente',label:'Presentes',n:'04',desc:'Seleções perfeitas para presentear'},
+  {key:'luxo',label:'Luxo',n:'05',desc:'O que há de mais refinado em perfumaria'},
+  {key:'lancamento',label:'Lançamentos',n:'06',desc:'As novidades mais desejadas do momento'},
+];
+const collectionsGrid = document.getElementById('collectionsGrid');
+COLLECTIONS.forEach(c=>{
+  const el = document.createElement('div');
+  el.className = 'coll-card';
+  el.innerHTML = `<div class="coll-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+    <div class="cnum">${c.n}</div><h3>${c.label}</h3><small>${c.desc}</small>`;
+  el.addEventListener('click',()=>{ applyFilter(c.key); document.getElementById('catalogo').scrollIntoView({behavior:'smooth'}); });
+  collectionsGrid.appendChild(el);
+});
+
+const FILTERS = [
+  {key:'all',label:'Todos'},
+  {key:'m',label:'Masculinos'},
+  {key:'f',label:'Femininos'},
+  {key:'bestseller',label:'Mais Vendidos'},
+  {key:'presente',label:'Presentes'},
+  {key:'luxo',label:'Luxo'},
+  {key:'lancamento',label:'Lançamentos'},
+];
+const filtersEl = document.getElementById('filters');
+FILTERS.forEach(f=>{
+  const b = document.createElement('button');
+  b.className = 'filter-chip'+(f.key==='all'?' active':'');
+  b.textContent = f.label;
+  b.dataset.key = f.key;
+  b.addEventListener('click',()=>applyFilter(f.key));
+  filtersEl.appendChild(b);
+});
+
+function applyFilter(key){
+  [...filtersEl.children].forEach(c=>c.classList.toggle('active', c.dataset.key===key));
+  renderCatalog(key);
+}
+
+function matchesFilter(p, key){
+  if(key==='all') return true;
+  if(key==='m'||key==='f') return p.g===key;
+  return p.cats.includes(key);
+}
+
+const catalogGrid = document.getElementById('catalogGrid');
+function renderCatalog(key='all'){
+  catalogGrid.innerHTML = '';
+  PERFUMES.filter(p=>matchesFilter(p,key)).forEach(p=>{
+    const tagLabel = p.cats.includes('bestseller') ? 'Mais Vendido' : p.cats.includes('luxo') ? 'Luxo' : p.cats.includes('lancamento') ? 'Lançamento' : p.cats.includes('presente') ? 'Presente' : '';
+    const card = document.createElement('div');
+    card.className = 'p-card reveal in';
+    card.innerHTML = `
+      <div class="p-media" data-open="${p.id}">
+        ${tagLabel ? `<span class="p-tag">${tagLabel}</span>` : ''}
+        ${bottleSVG(p)}
+      </div>
+      <div class="p-body">
+        <span class="p-brand">${p.b}</span>
+        <span class="p-name" data-open="${p.id}">${p.n}</span>
+        <span class="p-family">${p.fam} · ${p.vol}</span>
+        <div class="p-foot">
+          <span class="p-invest">Consulte o valor atualizado</span>
+        </div>
+        <div class="p-foot">
+          <a class="btn btn-small btn-outline" style="width:100%;justify-content:center;" target="_blank"
+             href="${waLink('Olá! Gostaria de receber um orçamento atualizado para o perfume '+p.n+'.')}">Solicitar orçamento</a>
+        </div>
+      </div>`;
+    catalogGrid.appendChild(card);
+  });
+  catalogGrid.querySelectorAll('[data-open]').forEach(el=>{
+    el.addEventListener('click',()=>openDetail(el.dataset.open));
+  });
+}
+renderCatalog();
+
+const overlay = document.getElementById('detailOverlay');
+const overlayContent = document.getElementById('overlayContent');
+
+function similarTo(p){
+  return PERFUMES.filter(o=> o.id!==p.id && o.g===p.g && o.fam.split(' ')[0]===p.fam.split(' ')[0]).slice(0,4)
+    .concat(PERFUMES.filter(o=>o.id!==p.id && o.g===p.g)).filter((v,i,a)=>a.findIndex(x=>x.id===v.id)===i).slice(0,4);
+}
+
+function openDetail(id){
+  const p = PMAP[id];
+  if(!p) return;
+  const sim = similarTo(p);
+  overlayContent.innerHTML = `
+    <div class="detail-grid">
+      <div class="detail-visual">${bottleSVG(p)}</div>
+      <div>
+        <span class="detail-brand">${p.b}</span>
+        <h1 class="detail-title">${p.n}</h1>
+        <div class="detail-badges">
+          <span>${p.vol}</span><span>${p.fam}</span><span>${p.g==='m'?'Masculino':'Feminino'}</span><span>Fixação ${p.fix}</span>
+        </div>
+        <p class="detail-story">${p.story}</p>
+
+        <div class="detail-block">
+          <h4>Pirâmide Olfativa</h4>
+          <div class="pyramid">
+            <div class="pyramid-row"><span>Topo</span><p>${p.top}</p></div>
+            <div class="pyramid-row"><span>Coração</span><p>${p.heart}</p></div>
+            <div class="pyramid-row"><span>Fundo</span><p>${p.base}</p></div>
+          </div>
+        </div>
+
+        <div class="detail-block">
+          <h4>Ficha Técnica</h4>
+          <div class="detail-facts">
+            <div>Fixação<b>${p.fix}</b></div>
+            <div>Projeção<b>${p.proj}</b></div>
+            <div>Ocasiões ideais<b>${p.occ.join(', ')}</b></div>
+            <div>Estações<b>${p.seas.join(', ')}</b></div>
+            <div>Perfil<b>${p.style.join(', ')}</b></div>
+            <div>Investimento<b>Consulte o valor atualizado</b></div>
+          </div>
+        </div>
+
+        <div class="detail-block">
+          <h4>Para quem usa</h4>
+          <p class="detail-story" style="margin-bottom:0;">${p.profile}</p>
+        </div>
+
+        <div class="detail-cta">
+          <a class="btn btn-primary" target="_blank" href="${waLink('Olá! Gostaria de receber um orçamento atualizado para o perfume '+p.n+'.')}">Solicitar orçamento</a>
+          <button class="btn btn-outline" id="closeDetailBtn">Voltar ao catálogo</button>
+        </div>
+
+        ${sim.length ? `<div class="detail-block" style="margin-top:50px;">
+          <h4>Perfumes semelhantes</h4>
+          <div class="similar-row">
+            ${sim.map(s=>`<div class="similar-card" data-open="${s.id}">${bottleSVG(s)}<p>${s.n}</p></div>`).join('')}
+          </div>
+        </div>` : ''}
+      </div>
+    </div>
+  `;
+  overlayContent.querySelectorAll('[data-open]').forEach(el=>{
+    el.addEventListener('click',()=>openDetail(el.dataset.open));
+  });
+  overlayContent.querySelector('#closeDetailBtn').addEventListener('click', closeDetail);
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  overlay.scrollTop = 0;
+  history.replaceState(null,'','#perfume/'+id);
+}
+function closeDetail(){
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+  history.replaceState(null,'','#catalogo');
+}
+document.getElementById('overlayClose').addEventListener('click', closeDetail);
+
+window.addEventListener('DOMContentLoaded',()=>{
+  const h = location.hash;
+  if(h.startsWith('#perfume/')){
+    const id = h.replace('#perfume/','');
+    if(PMAP[id]) setTimeout(()=>openDetail(id), 300);
+  }
+});
+
+const quizState = { target:null, style:null, occ:null, int:null };
+let quizStepIdx = 0;
+const quizSteps = [...document.querySelectorAll('.quiz-step')];
+const quizProgress = [...document.querySelectorAll('.quiz-progress i')];
+const quizResult = document.getElementById('quizResult');
+
+function goToStep(i){
+  quizSteps.forEach(s=>s.classList.remove('active'));
+  quizResult.classList.remove('active');
+  if(i < quizSteps.length){
+    quizSteps[i].classList.add('active');
+  }
+  quizProgress.forEach((el,idx)=>{
+    el.classList.toggle('active', idx===i);
+    el.classList.toggle('done', idx<i);
+  });
+  quizStepIdx = i;
+}
+
+document.querySelectorAll('.quiz-opt').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const q = btn.dataset.q, v = btn.dataset.v;
+    quizState[q] = v;
+    btn.parentElement.querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('picked'));
+    btn.classList.add('picked');
+    setTimeout(()=>{
+      if(quizStepIdx < quizSteps.length-1){
+        goToStep(quizStepIdx+1);
+      } else {
+        showQuizResult();
+      }
+    }, 320);
+  });
+});
+document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>goToStep(Math.max(0,quizStepIdx-1))));
+
+function showQuizResult(){
+  const target = quizState.target;
+  const genderPool = target==='presente' ? PERFUMES : PERFUMES.filter(p=>p.g===target);
+  const scored = genderPool.map(p=>{
+    let score = 0;
+    if(p.style.includes(quizState.style)) score += 3;
+    if(p.occ.includes(quizState.occ)) score += 2;
+    if(p.int===quizState.int) score += 2;
+    return {p, score};
+  }).sort((a,b)=>b.score-a.score);
+  const top3 = scored.slice(0,3).map(s=>s.p);
+
+  const grid = document.getElementById('quizResultGrid');
+  grid.innerHTML = top3.map(p=>`
+    <div class="quiz-result-card" data-open="${p.id}">
+      ${bottleSVG(p)}
+      <h4>${p.n}</h4>
+      <small>${p.b}</small>
+    </div>`).join('');
+  grid.querySelectorAll('[data-open]').forEach(el=>el.addEventListener('click',()=>openDetail(el.dataset.open)));
+
+  const names = top3.map(p=>p.n).join(', ');
+  document.getElementById('quizWaBtn').href = waLink('Olá! Fiz o teste de perfil olfativo no site e gostaria de consultoria personalizada. Fragrâncias recomendadas: '+names+'.');
+
+  quizSteps.forEach(s=>s.classList.remove('active'));
+  quizResult.classList.add('active');
+}
+document.getElementById('quizRestart').addEventListener('click',()=>{
+  Object.keys(quizState).forEach(k=>quizState[k]=null);
+  document.querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('picked'));
+  goToStep(0);
+});
+
+const destaque = PMAP['sauvage'];
+document.getElementById('destaqueCard').innerHTML = `
+  <div class="destaque-visual">${bottleSVG(destaque)}</div>
+  <div class="destaque-body">
+    <div class="eyebrow">Seleção da Curadoria</div>
+    <h3>${destaque.n}</h3>
+    <div class="destaque-brand">${destaque.b}</div>
+    <p class="story">${destaque.story}</p>
+    <div class="destaque-meta">
+      <div>Família<b>${destaque.fam}</b></div>
+      <div>Fixação<b>${destaque.fix}</b></div>
+      <div>Ocasião<b>${destaque.occ[0]}</b></div>
+    </div>
+    <div class="detail-cta">
+      <a class="btn btn-primary" target="_blank" href="${waLink('Olá! Gostaria de receber um orçamento atualizado para o perfume '+destaque.n+'.')}">Solicitar orçamento</a>
+      <button class="btn btn-outline" data-open="${destaque.id}">Ver ficha completa</button>
+    </div>
+  </div>`;
+document.querySelector('#destaqueCard [data-open]').addEventListener('click', e=>openDetail(e.target.dataset.open));
+
+const FAQS = [
+  {q:'Os perfumes são originais?', a:'Sim. Trabalhamos exclusivamente com fragrâncias originais, passando por verificação de autenticidade antes de cada envio.'},
+  {q:'Como funciona o orçamento?', a:'Basta clicar em "Solicitar orçamento" no perfume desejado — você será direcionado ao WhatsApp da nossa consultoria, que enviará o valor atualizado e disponibilidade.'},
+  {q:'Quanto tempo leva?', a:'O prazo é informado diretamente pela consultoria no momento do orçamento, de acordo com sua localização e disponibilidade do produto.'},
+  {q:'Como funciona a entrega?', a:'A entrega é combinada individualmente com cada cliente, com acompanhamento durante todo o processo.'},
+  {q:'Quais formas de pagamento?', a:'As formas de pagamento disponíveis são apresentadas pela nossa consultoria durante o atendimento pelo WhatsApp.'},
+];
+const faqList = document.getElementById('faqList');
+FAQS.forEach(f=>{
+  const item = document.createElement('div');
+  item.className = 'faq-item';
+  item.innerHTML = `<button class="faq-q">${f.q}<span class="plus"></span></button>
+    <div class="faq-a"><div class="faq-a-in">${f.a}</div></div>`;
+  const btn = item.querySelector('.faq-q');
+  const panel = item.querySelector('.faq-a');
+  btn.addEventListener('click',()=>{
+    const isOpen = item.classList.contains('open');
+    faqList.querySelectorAll('.faq-item').forEach(i=>{ i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = null; });
+    if(!isOpen){ item.classList.add('open'); panel.style.maxHeight = panel.scrollHeight+'px'; }
+  });
+  faqList.appendChild(item);
+});
+
+const generalMsg = 'Olá! Conheci a Essência Sublime pelo site e gostaria de receber um orçamento.';
+['ctaWaBtn','footerWaLink','waFloat'].forEach(id=>{
+  document.getElementById(id).href = waLink(generalMsg);
+});
+
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+function setTheme(t){
+  document.documentElement.setAttribute('data-theme', t);
+  themeIcon.innerHTML = t==='dark'
+    ? '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>'
+    : '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+  localStorage.setItem('es-theme', t);
+}
+themeToggle.addEventListener('click',()=>{
+  const cur = document.documentElement.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+  setTheme(cur);
+});
+setTheme(localStorage.getItem('es-theme') || 'light');
+
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll',()=>{
+  header.classList.toggle('scrolled', window.scrollY > 40);
+});
+const burger = document.getElementById('burger');
+const navEl = document.querySelector('nav');
+burger.addEventListener('click',()=>{
+  const open = navEl.style.display === 'flex';
+  if(open){ navEl.style.display=''; navEl.querySelector('ul').style.display=''; }
+  else{
+    navEl.style.cssText = 'display:flex;position:fixed;top:70px;left:0;right:0;background:var(--bg);flex-direction:column;padding:20px 30px 30px;border-bottom:1px solid var(--line);gap:0;';
+    navEl.querySelector('ul').style.cssText = 'display:flex;flex-direction:column;gap:20px;';
+  }
+});
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{
+  if(window.innerWidth<=980){ navEl.style.display=''; }
+}));
+
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
