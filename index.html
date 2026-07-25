@@ -8,6 +8,8 @@
 <meta property="og:title" content="Essência Sublime — A essência da elegância">
 <meta property="og:description" content="Perfumes importados para quem valoriza elegância e autenticidade. Curadoria especializada e atendimento personalizado.">
 <meta property="og:type" content="website">
+<link rel="icon" href="images/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="images/brand/monogram-es-gold.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -30,10 +32,10 @@
   --ink-faint:#8C8678;
   --line:rgba(23,21,16,0.11);
   --line-strong:rgba(23,21,16,0.2);
-  --gold:#A9824C;
-  --gold-deep:#7E5F35;
-  --gold-soft:rgba(169,130,76,0.14);
-  --gold-glow:rgba(169,130,76,0.35);
+  --gold:#B08D57;
+  --gold-deep:#8C6F41;
+  --gold-soft:rgba(176,141,87,0.13);
+  --gold-glow:rgba(176,141,87,0.32);
   --shadow:0 30px 60px -30px rgba(23,21,16,0.25);
   --serif:'Cormorant Garamond', serif;
   --sans:'Jost', sans-serif;
@@ -47,10 +49,10 @@
   --ink-faint:#8F8877;
   --line:rgba(243,240,231,0.12);
   --line-strong:rgba(243,240,231,0.22);
-  --gold:#CDA867;
-  --gold-deep:#E4C285;
-  --gold-soft:rgba(205,168,103,0.16);
-  --gold-glow:rgba(205,168,103,0.4);
+  --gold:#C6A86A;
+  --gold-deep:#D9BC85;
+  --gold-soft:rgba(198,168,106,0.15);
+  --gold-glow:rgba(198,168,106,0.38);
   --shadow:0 30px 60px -30px rgba(0,0,0,0.6);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -108,15 +110,17 @@ header.scrolled{
   border-bottom:1px solid var(--line);
 }
 .logo{
-  font-family:var(--serif);
-  font-size:24px;
-  letter-spacing:.14em;
   display:flex;
-  flex-direction:column;
+  align-items:center;
+  gap:13px;
   line-height:1;
 }
-.logo b{font-weight:500;}
-.logo span{font-size:8px;font-family:var(--sans);letter-spacing:.38em;color:var(--gold);margin-top:6px;text-transform:uppercase;}
+.logo-icon{width:20px;height:28px;color:var(--gold);flex-shrink:0;transition:color .3s ease;}
+.logo-icon svg{width:100%;height:100%;display:block;}
+.logo-word{display:flex;flex-direction:column;}
+.logo-word .lw-serif{font-family:var(--serif);font-style:italic;font-weight:500;font-size:23px;letter-spacing:.01em;color:var(--ink);}
+.logo-word .lw-sans{font-size:8px;font-family:var(--sans);letter-spacing:.42em;color:var(--gold);margin-top:5px;text-transform:uppercase;}
+footer .logo-word .lw-serif{color:var(--bg);}
 nav{display:flex;align-items:center;gap:38px;}
 nav ul{display:flex;gap:34px;}
 nav a{
@@ -247,7 +251,8 @@ section{padding:130px 0;position:relative;}
 .p-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--line-strong);}
 .p-media{aspect-ratio:3/4;position:relative;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center;}
 .p-media svg{width:44%;transition:transform .6s cubic-bezier(.16,.8,.3,1);}
-.p-card:hover .p-media svg{transform:scale(1.06) translateY(-4px);}
+.p-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.16,.8,.3,1);}
+.p-card:hover .p-media svg,.p-card:hover .p-media img{transform:scale(1.06) translateY(-4px);}
 .p-tag{position:absolute;top:14px;left:14px;font-size:9px;letter-spacing:.16em;text-transform:uppercase;padding:6px 10px;background:var(--ink);color:var(--bg);}
 .p-body{padding:22px 22px 26px;display:flex;flex-direction:column;gap:6px;flex:1;}
 .p-brand{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);}
@@ -288,6 +293,7 @@ section{padding:130px 0;position:relative;}
 .quiz-result-card{border:1px solid var(--line);padding:18px;text-align:center;cursor:pointer;transition:border-color .3s;}
 .quiz-result-card:hover{border-color:var(--gold);}
 .quiz-result-card svg{width:60%;margin:0 auto 12px;}
+.quiz-result-card img{width:100%;aspect-ratio:3/4;object-fit:cover;margin:0 auto 12px;}
 .quiz-result-card h4{font-family:var(--serif);font-size:16px;}
 .quiz-result-card small{font-size:10px;color:var(--ink-faint);letter-spacing:.06em;}
 
@@ -295,6 +301,8 @@ section{padding:130px 0;position:relative;}
 .destaque-card{display:grid;grid-template-columns:.85fr 1.15fr;background:var(--surface);border:1px solid var(--line);overflow:hidden;}
 .destaque-visual{background:var(--bg-alt);display:flex;align-items:center;justify-content:center;padding:60px;position:relative;}
 .destaque-visual svg{width:70%;}
+.destaque-visual img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.destaque-visual{overflow:hidden;}
 .destaque-body{padding:clamp(34px,5vw,72px);display:flex;flex-direction:column;justify-content:center;}
 .destaque-body .eyebrow{margin-bottom:20px;}
 .destaque-body h3{font-size:clamp(28px,3.4vw,44px);margin-bottom:6px;}
@@ -330,7 +338,6 @@ footer{background:var(--ink);color:var(--bg);padding:90px 0 30px;}
 [data-theme="dark"] footer{background:#050403;}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px;padding-bottom:60px;border-bottom:1px solid rgba(250,249,245,0.14);}
 footer .logo{color:var(--bg);}
-footer .logo span{color:var(--gold);}
 .footer-tag{margin-top:20px;font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(250,249,245,0.6);}
 .footer-col h5{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;}
 .footer-col a,.footer-col p{display:block;font-size:14px;color:rgba(250,249,245,0.72);margin-bottom:13px;}
@@ -363,6 +370,8 @@ footer .logo span{color:var(--gold);}
 .detail-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;}
 .detail-visual{background:var(--bg-alt);border:1px solid var(--line);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;position:sticky;top:110px;height:fit-content;}
 .detail-visual svg{width:50%;}
+.detail-visual img{width:100%;height:100%;object-fit:cover;}
+.detail-visual{overflow:hidden;}
 .detail-brand{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);}
 [data-theme="dark"] .detail-brand{color:var(--gold);}
 .detail-title{font-size:clamp(32px,4.5vw,52px);margin:10px 0 20px;}
@@ -384,6 +393,7 @@ footer .logo span{color:var(--gold);}
 .similar-card{cursor:pointer;border:1px solid var(--line);padding:16px;text-align:center;transition:border-color .3s;}
 .similar-card:hover{border-color:var(--gold);}
 .similar-card svg{width:60%;margin:0 auto 10px;}
+.similar-card img{width:100%;aspect-ratio:3/4;object-fit:cover;margin:0 auto 10px;}
 .similar-card p{font-family:var(--serif);font-size:14px;}
 
 /* ---------- misc ---------- */
@@ -416,7 +426,10 @@ footer .logo span{color:var(--gold);}
 <body>
 
 <header id="siteHeader">
-  <a href="#home" class="logo"><b>Essência Sublime</b><span>A essência da elegância</span></a>
+  <a href="#home" class="logo" aria-label="Essência Sublime — início">
+    <span class="logo-icon"><svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg"><rect x="41" y="4" width="18" height="12" rx="2" fill="currentColor"/><rect x="45" y="14" width="10" height="8" fill="currentColor"/><path d="M30 22 C30 22 24 34 24 46 L24 122 C24 130 34 136 50 136 C66 136 76 130 76 122 L76 46 C76 34 70 22 70 22 Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/><line x1="34" y1="72" x2="66" y2="72" stroke="currentColor" stroke-width="4"/></svg></span>
+    <span class="logo-word"><b class="lw-serif">Essência</b><b class="lw-sans">Sublime</b></span>
+  </a>
   <nav>
     <ul>
       <li><a href="#home">Início</a></li>
@@ -458,14 +471,11 @@ footer .logo span{color:var(--gold);}
       </div>
     </div>
     <div class="hero-bottle">
-      <svg viewBox="0 0 220 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="80" y="20" width="60" height="34" rx="4" fill="var(--gold)"/>
-        <rect x="95" y="0" width="30" height="26" rx="3" fill="var(--ink)"/>
-        <path d="M60 54 C60 54 50 80 50 110 L50 380 C50 400 66 414 110 414 C154 414 170 400 170 380 L170 110 C170 80 160 54 160 54 Z" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.5"/>
-        <rect x="66" y="150" width="88" height="120" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="1"/>
-        <text x="110" y="205" font-family="Cormorant Garamond, serif" font-size="17" fill="var(--gold-deep)" text-anchor="middle" letter-spacing="2">ESSÊNCIA</text>
-        <text x="110" y="228" font-family="Cormorant Garamond, serif" font-size="17" fill="var(--gold-deep)" text-anchor="middle" letter-spacing="2">SUBLIME</text>
-        <line x1="86" y1="240" x2="134" y2="240" stroke="var(--gold)" stroke-width="1"/>
+      <svg viewBox="0 0 100 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="41" y="4" width="18" height="12" rx="2" fill="var(--gold)"/>
+        <rect x="45" y="14" width="10" height="8" fill="var(--gold)"/>
+        <path d="M30 22 C30 22 24 34 24 46 L24 122 C24 130 34 136 50 136 C66 136 76 130 76 122 L76 46 C76 34 70 22 70 22 Z" fill="var(--surface)" stroke="var(--gold)" stroke-width="1.6" stroke-linejoin="round"/>
+        <line x1="34" y1="72" x2="66" y2="72" stroke="var(--gold)" stroke-width="1"/>
       </svg>
     </div>
   </div>
@@ -676,7 +686,10 @@ footer .logo span{color:var(--gold);}
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a href="#home" class="logo"><b>Essência Sublime</b><span>Boutique de perfumes importados</span></a>
+        <a href="#home" class="logo" aria-label="Essência Sublime">
+          <span class="logo-icon" style="color:var(--gold);"><svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg"><rect x="41" y="4" width="18" height="12" rx="2" fill="currentColor"/><rect x="45" y="14" width="10" height="8" fill="currentColor"/><path d="M30 22 C30 22 24 34 24 46 L24 122 C24 130 34 136 50 136 C66 136 76 130 76 122 L76 46 C76 34 70 22 70 22 Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/><line x1="34" y1="72" x2="66" y2="72" stroke="currentColor" stroke-width="4"/></svg></span>
+          <span class="logo-word"><b class="lw-serif">Essência</b><b class="lw-sans">Sublime</b></span>
+        </a>
         <p class="footer-tag">"A essência da elegância."</p>
       </div>
       <div class="footer-col">
@@ -936,16 +949,30 @@ const PERFUMES = [
 
 const PMAP = Object.fromEntries(PERFUMES.map(p=>[p.id,p]));
 
-function bottleSVG(p){
+/* Placeholder premium: usado sempre que a fotografia real ainda não existe em
+   images/perfumes/{id}.webp — nunca deixa espaço vazio no layout. */
+function placeholderSVG(p){
   const initials = p.n.split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();
-  return `<svg viewBox="0 0 160 260" xmlns="http://www.w3.org/2000/svg">
-    <rect x="58" y="10" width="44" height="24" rx="3" fill="var(--ink)" opacity=".85"/>
-    <rect x="68" y="0" width="24" height="18" rx="2" fill="var(--gold)"/>
-    <path d="M44 34c0 0-10 20-10 42v148c0 10 18 18 46 18s46-8 46-18V76c0-22-10-42-10-42Z" fill="var(--surface)" stroke="var(--gold)" stroke-width="1.1"/>
-    <rect x="52" y="108" width="56" height="72" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width=".8"/>
-    <text x="80" y="150" font-family="Cormorant Garamond, serif" font-size="20" fill="var(--gold-deep)" text-anchor="middle" letter-spacing="1">${initials}</text>
+  return `<svg class="ph-bottle" viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+    <rect x="41" y="4" width="18" height="12" rx="2" fill="var(--gold)"/>
+    <rect x="45" y="14" width="10" height="8" fill="var(--gold)"/>
+    <path d="M30 22 C30 22 24 34 24 46 L24 122 C24 130 34 136 50 136 C66 136 76 130 76 122 L76 46 C76 34 70 22 70 22 Z" fill="var(--bg-alt)" stroke="var(--gold)" stroke-width="1.4" stroke-linejoin="round"/>
+    <line x1="34" y1="72" x2="66" y2="72" stroke="var(--gold)" stroke-width="1"/>
+    <text x="50" y="102" font-family="Cormorant Garamond, serif" font-size="16" fill="var(--gold-deep)" text-anchor="middle" letter-spacing="1">${initials}</text>
   </svg>`;
 }
+/* Tenta carregar a fotografia real do perfume; se não existir, troca
+   automaticamente pelo placeholder acima — sem quebrar o layout. */
+function productMedia(p){
+  return `<img src="images/perfumes/${p.id}.webp" alt="${p.n} — ${p.b}, ${p.fam}" loading="lazy"
+    onerror="this.replaceWith(placeholderEl('${p.id}'))">`;
+}
+function placeholderEl(id){
+  const wrap = document.createElement('div');
+  wrap.innerHTML = placeholderSVG(PMAP[id]);
+  return wrap.firstElementChild;
+}
+window.placeholderEl = placeholderEl;
 
 const COLLECTIONS = [
   {key:'m',label:'Masculinos',n:'01',desc:'Fragrâncias de caráter e presença'},
@@ -1005,7 +1032,7 @@ function renderCatalog(key='all'){
     card.innerHTML = `
       <div class="p-media" data-open="${p.id}">
         ${tagLabel ? `<span class="p-tag">${tagLabel}</span>` : ''}
-        ${bottleSVG(p)}
+        ${productMedia(p)}
       </div>
       <div class="p-body">
         <span class="p-brand">${p.b}</span>
@@ -1041,7 +1068,7 @@ function openDetail(id){
   const sim = similarTo(p);
   overlayContent.innerHTML = `
     <div class="detail-grid">
-      <div class="detail-visual">${bottleSVG(p)}</div>
+      <div class="detail-visual">${productMedia(p)}</div>
       <div>
         <span class="detail-brand">${p.b}</span>
         <h1 class="detail-title">${p.n}</h1>
@@ -1084,7 +1111,7 @@ function openDetail(id){
         ${sim.length ? `<div class="detail-block" style="margin-top:50px;">
           <h4>Perfumes semelhantes</h4>
           <div class="similar-row">
-            ${sim.map(s=>`<div class="similar-card" data-open="${s.id}">${bottleSVG(s)}<p>${s.n}</p></div>`).join('')}
+            ${sim.map(s=>`<div class="similar-card" data-open="${s.id}">${productMedia(s)}<p>${s.n}</p></div>`).join('')}
           </div>
         </div>` : ''}
       </div>
@@ -1165,7 +1192,7 @@ function showQuizResult(){
   const grid = document.getElementById('quizResultGrid');
   grid.innerHTML = top3.map(p=>`
     <div class="quiz-result-card" data-open="${p.id}">
-      ${bottleSVG(p)}
+      ${productMedia(p)}
       <h4>${p.n}</h4>
       <small>${p.b}</small>
     </div>`).join('');
@@ -1185,7 +1212,7 @@ document.getElementById('quizRestart').addEventListener('click',()=>{
 
 const destaque = PMAP['sauvage'];
 document.getElementById('destaqueCard').innerHTML = `
-  <div class="destaque-visual">${bottleSVG(destaque)}</div>
+  <div class="destaque-visual">${productMedia(destaque)}</div>
   <div class="destaque-body">
     <div class="eyebrow">Seleção da Curadoria</div>
     <h3>${destaque.n}</h3>
@@ -1271,3 +1298,452 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
+
+# Essência Sublime — Projeto Completo
+
+Site estático (HTML/CSS/JS puro, sem build) + sistema Node.js de
+importação automatizada de fotos do catálogo.
+
+## Estrutura do projeto
+
+```
+index.html                    → site (catálogo, quiz, páginas de perfume)
+manual-marca.html             → manual de identidade visual
+images/
+  brand/                      → símbolo, monograma ES, logo, favicon
+  perfumes/                   → fotos .webp dos perfumes (geradas pelo script)
+    placeholder.svg           → placeholder premium, usado quando falta foto
+scripts/
+  import-images.js            → script de importação/otimização de imagens
+perfumes.json                 → lista de perfumes (nome + arquivo)
+image-sources.example.json    → modelo do mapa manual de URLs das fotos
+package.json                  → dependências e comando "npm run import-images"
+```
+
+## Publicar o site
+
+O site não precisa de build — é HTML puro. Suba a pasta inteira
+(mantendo `index.html` na raiz e as pastas `images/` junto) na Vercel,
+Netlify, GitHub Pages ou qualquer hospedagem estática.
+
+```bash
+# Vercel, a partir da raiz do projeto:
+vercel
+```
+
+## Importar as fotos dos perfumes
+
+O site já procura automaticamente por `images/perfumes/{id}.webp` para
+cada perfume do catálogo (os ids estão em `perfumes.json`). Enquanto a
+foto não existir, o site mostra sozinho um placeholder elegante — nada
+fica vazio.
+
+**1. Instalar dependências do script**
+```bash
+npm install
+```
+
+**2. Configurar de onde vêm as fotos** — duas opções, veja o passo a
+passo completo dentro de `scripts/import-images.js` (função
+`getImageUrl`, bem comentada):
+- **Mapa manual**: copie `image-sources.example.json` para
+  `image-sources.json` e cole a URL de cada foto — mais simples e
+  mais confiável.
+- **Integração automática**: API de busca de imagens, banco do
+  distribuidor, S3 etc. — há um bloco de exemplo comentado pronto
+  para adaptar.
+
+**3. Rodar**
+```bash
+npm run import-images
+```
+
+Isso baixa, valida, converte para WebP, redimensiona (máx. 1200px) e
+salva cada foto em `images/perfumes/{arquivo}.webp` — no MESMO lugar
+de onde o site já lê. Ao final é gerado `import-report.json` com o
+resumo completo (encontrados, não encontrados, erros, tempo de
+execução), além de um log colorido no terminal.
+
+Pode rodar quantas vezes quiser — reexecutar é seguro, os arquivos
+são apenas sobrescritos.
+
+## Nota sobre a estrutura de pastas
+
+O prompt original do sistema de importação usava a convenção
+`/public/images/perfumes/`, comum em frameworks como Next.js ou Vite
+(onde tudo dentro de `public/` é servido a partir da raiz do site).
+Como este projeto é um site estático puro — sem framework, sem build
+— essa "raiz servida" já é a própria raiz do projeto. Por isso o
+script foi ajustado para salvar direto em `images/perfumes/`, que é
+exatamente o caminho que `index.html` já usa. Funcionalmente é a
+mesma coisa; só não existe uma pasta `public/` extra e desnecessária
+no meio do caminho.
+
+/**
+ * =============================================================================
+ *  ESSÊNCIA SUBLIME — IMPORTAÇÃO AUTOMATIZADA DE IMAGENS DO CATÁLOGO
+ * =============================================================================
+ *  O que este script faz, em ordem:
+ *
+ *   1. Lê /perfumes.json (lista de { nome, arquivo })
+ *   2. Para cada perfume, pergunta à função getImageUrl() qual URL usar
+ *      (essa função é o ÚNICO ponto que você precisa configurar — ver
+ *      instruções na seção "CONFIGURAR A FONTE DE IMAGENS" logo abaixo)
+ *   3. Baixa a imagem via Axios
+ *   4. Valida se o conteúdo baixado é REALMENTE uma imagem (Sharp lê os
+ *      metadados; se falhar, não é uma imagem válida)
+ *   5. Converte para WebP, redimensiona para no máximo 1200px de largura
+ *      (mantendo proporção) e otimiza a qualidade para web
+ *   6. Salva em /images/perfumes/{arquivo}.webp
+ *   7. Se não houver imagem (fonte não configurada, 404, arquivo inválido
+ *      etc.) o perfume é registrado no relatório e o processamento CONTINUA
+ *      — nada aqui derruba o script
+ *   8. Ao final, grava /import-report.json e imprime um resumo no terminal
+ *   9. Garante que /images/perfumes/placeholder.svg sempre exista,
+ *      para o site nunca ficar com espaço vazio quando faltar uma foto
+ *
+ *  Este arquivo usa ES Modules (import/export), async/await em todo o
+ *  pipeline, e todo bloco de risco (rede, disco, parsing de imagem) está
+ *  isolado em try/catch para nunca interromper o lote inteiro por causa
+ *  de um único perfume com problema.
+ * =============================================================================
+ */
+
+import fs from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import axios from 'axios';
+import sharp from 'sharp';
+
+// -----------------------------------------------------------------------------
+// CAMINHOS DO PROJETO
+// -----------------------------------------------------------------------------
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ROOT_DIR = path.resolve(__dirname, '..');
+
+const PERFUMES_JSON_PATH = path.join(ROOT_DIR, 'perfumes.json');
+const IMAGE_SOURCES_PATH = path.join(ROOT_DIR, 'image-sources.json'); // opcional
+const OUTPUT_DIR = path.join(ROOT_DIR, 'images', 'perfumes');
+const REPORT_PATH = path.join(ROOT_DIR, 'import-report.json');
+const PLACEHOLDER_PATH = path.join(OUTPUT_DIR, 'placeholder.svg');
+
+// -----------------------------------------------------------------------------
+// CONFIGURAÇÃO DE PROCESSAMENTO DE IMAGEM
+// -----------------------------------------------------------------------------
+const CONFIG = {
+  maxWidth: 1200,        // largura máxima final, em pixels
+  webpQuality: 82,       // 0-100 — 82 é um ótimo equilíbrio qualidade/peso
+  downloadTimeoutMs: 15000,
+  userAgent: 'EssenciaSublime-ImageImporter/1.0 (+https://essenciasublime.com)',
+};
+
+// =============================================================================
+// CONFIGURAR A FONTE DE IMAGENS  ←  EDITE ESTA FUNÇÃO
+// =============================================================================
+// Este é o ÚNICO lugar do script que depende de "onde a foto vem".
+// Ele recebe um perfume ({ nome, arquivo }) e deve devolver:
+//   - uma string com a URL da imagem, OU
+//   - null/undefined, se não houver imagem disponível para esse perfume
+//     (nesse caso ele cai automaticamente em "não encontrados" no relatório)
+//
+// Por padrão, o script já resolve a URL usando um mapa manual opcional
+// em /image-sources.json (veja /image-sources.example.json). Isso cobre o
+// caso mais comum: você (ou o fornecedor) já tem os links das fotos.
+//
+// Para plugar uma fonte automática (API de busca de imagens, banco de
+// imagens do distribuidor, scraping autorizado, etc.), implemente a
+// chamada dentro do bloco indicado abaixo. Exemplos de integração comum:
+//   • Google Custom Search API (Image Search)
+//   • Bing Image Search API / SerpAPI
+//   • API do próprio fornecedor/distribuidor de perfumes
+//   • Um bucket S3 / CDN próprio, usando convenção de nomes
+// =============================================================================
+async function getImageUrl(perfume, imageSourcesMap) {
+  // 1) Mapa manual (image-sources.json) tem prioridade — é a forma mais
+  //    confiável de garantir a foto certa para o produto certo.
+  if (imageSourcesMap && imageSourcesMap[perfume.arquivo]) {
+    return imageSourcesMap[perfume.arquivo];
+  }
+
+  // 2) INTEGRAÇÃO AUTOMÁTICA — ative aqui a fonte de sua escolha.
+  //    Exemplo (comentado) usando uma API de busca de imagens genérica:
+  //
+  //    const resposta = await axios.get('https://api.exemplo.com/search', {
+  //      params: { q: `${perfume.nome} perfume frasco`, apiKey: process.env.IMAGE_API_KEY },
+  //      timeout: CONFIG.downloadTimeoutMs,
+  //    });
+  //    return resposta.data?.results?.[0]?.url ?? null;
+
+  // 3) Nenhuma fonte configurada para este perfume → não encontrado.
+  return null;
+}
+
+// -----------------------------------------------------------------------------
+// UTILITÁRIOS DE TERMINAL (log amigável, sem dependência extra)
+// -----------------------------------------------------------------------------
+const color = {
+  green: (s) => `\x1b[32m${s}\x1b[0m`,
+  red: (s) => `\x1b[31m${s}\x1b[0m`,
+  yellow: (s) => `\x1b[33m${s}\x1b[0m`,
+  gray: (s) => `\x1b[90m${s}\x1b[0m`,
+  bold: (s) => `\x1b[1m${s}\x1b[0m`,
+  gold: (s) => `\x1b[38;5;178m${s}\x1b[0m`,
+};
+
+function logStep(msg) {
+  console.log(color.gray('  › ') + msg);
+}
+function logOk(msg) {
+  console.log(color.green('  ✓ ') + msg);
+}
+function logWarn(msg) {
+  console.log(color.yellow('  ⚠ ') + msg);
+}
+function logErr(msg) {
+  console.log(color.red('  ✕ ') + msg);
+}
+
+// -----------------------------------------------------------------------------
+// GARANTE QUE UM DIRETÓRIO EXISTA (cria recursivamente se necessário)
+// -----------------------------------------------------------------------------
+async function ensureDir(dirPath) {
+  await fs.mkdir(dirPath, { recursive: true });
+}
+
+// -----------------------------------------------------------------------------
+// CARREGA perfumes.json
+// -----------------------------------------------------------------------------
+async function loadPerfumes() {
+  const raw = await fs.readFile(PERFUMES_JSON_PATH, 'utf-8');
+  const data = JSON.parse(raw);
+
+  if (!Array.isArray(data)) {
+    throw new Error('perfumes.json deve conter um array de objetos { nome, arquivo }.');
+  }
+  for (const item of data) {
+    if (!item.nome || !item.arquivo) {
+      throw new Error(`Item inválido em perfumes.json: ${JSON.stringify(item)} — "nome" e "arquivo" são obrigatórios.`);
+    }
+  }
+  return data;
+}
+
+// -----------------------------------------------------------------------------
+// CARREGA image-sources.json, SE EXISTIR (é opcional)
+// -----------------------------------------------------------------------------
+async function loadImageSourcesMap() {
+  try {
+    const raw = await fs.readFile(IMAGE_SOURCES_PATH, 'utf-8');
+    return JSON.parse(raw);
+  } catch (err) {
+    if (err.code === 'ENOENT') return {}; // arquivo não existe — tudo bem, é opcional
+    logWarn(`image-sources.json existe mas não pôde ser lido (${err.message}). Ignorando.`);
+    return {};
+  }
+}
+
+// -----------------------------------------------------------------------------
+// BAIXA UMA IMAGEM E RETORNA O BUFFER BRUTO
+// -----------------------------------------------------------------------------
+async function downloadImage(url) {
+  const response = await axios.get(url, {
+    responseType: 'arraybuffer',
+    timeout: CONFIG.downloadTimeoutMs,
+    headers: { 'User-Agent': CONFIG.userAgent },
+    validateStatus: (status) => status === 200,
+  });
+
+  const contentType = response.headers['content-type'] || '';
+  if (!contentType.startsWith('image/')) {
+    throw new Error(`Content-Type inesperado: "${contentType}" (esperado image/*)`);
+  }
+
+  return Buffer.from(response.data);
+}
+
+// -----------------------------------------------------------------------------
+// VALIDA SE O BUFFER É REALMENTE UMA IMAGEM DECODIFICÁVEL
+// (usa o próprio Sharp: se ele conseguir ler os metadados, é uma imagem válida)
+// -----------------------------------------------------------------------------
+async function validateIsImage(buffer) {
+  const metadata = await sharp(buffer).metadata(); // lança erro se não for imagem
+  if (!metadata.width || !metadata.height) {
+    throw new Error('Imagem sem dimensões legíveis.');
+  }
+  return metadata;
+}
+
+// -----------------------------------------------------------------------------
+// CONVERTE PARA WEBP, REDIMENSIONA E OTIMIZA
+// -----------------------------------------------------------------------------
+async function processImageToWebp(buffer) {
+  return sharp(buffer)
+    .rotate() // corrige orientação EXIF automaticamente
+    .resize({
+      width: CONFIG.maxWidth,
+      withoutEnlargement: true, // nunca aumenta imagens menores que 1200px
+    })
+    .webp({ quality: CONFIG.webpQuality })
+    .toBuffer();
+}
+
+// -----------------------------------------------------------------------------
+// PROCESSA UM ÚNICO PERFUME (baixar → validar → converter → salvar)
+// Nunca lança erro para fora: qualquer falha é capturada e devolvida
+// como resultado estruturado, para o loop principal nunca parar.
+// -----------------------------------------------------------------------------
+async function processPerfume(perfume, imageSourcesMap) {
+  const outputPath = path.join(OUTPUT_DIR, `${perfume.arquivo}.webp`);
+
+  try {
+    const url = await getImageUrl(perfume, imageSourcesMap);
+
+    if (!url) {
+      logWarn(`${perfume.nome} — nenhuma fonte de imagem configurada`);
+      return { status: 'nao-encontrado', perfume, motivo: 'Nenhuma URL disponível para este perfume' };
+    }
+
+    logStep(`${perfume.nome} — baixando de ${url}`);
+    const rawBuffer = await downloadImage(url);
+
+    const metadata = await validateIsImage(rawBuffer);
+
+    const webpBuffer = await processImageToWebp(rawBuffer);
+    await fs.writeFile(outputPath, webpBuffer);
+
+    logOk(`${perfume.nome} → ${perfume.arquivo}.webp (${metadata.width}x${metadata.height} → máx ${CONFIG.maxWidth}px, ${(webpBuffer.length / 1024).toFixed(1)}kb)`);
+
+    return {
+      status: 'encontrado',
+      perfume,
+      url,
+      arquivoSalvo: `${perfume.arquivo}.webp`,
+      tamanhoOriginal: `${metadata.width}x${metadata.height}`,
+      tamanhoArquivoKb: Number((webpBuffer.length / 1024).toFixed(1)),
+    };
+  } catch (err) {
+    logErr(`${perfume.nome} — erro: ${err.message}`);
+    return { status: 'erro', perfume, erro: err.message };
+  }
+}
+
+// -----------------------------------------------------------------------------
+// GERA O PLACEHOLDER PREMIUM EM SVG (executa sempre, sobrescreve o anterior)
+// Fundo branco, borda fina cinza, ícone minimalista, texto "Imagem em atualização"
+// -----------------------------------------------------------------------------
+async function generatePlaceholderSvg() {
+  const svg = `<svg width="800" height="1067" viewBox="0 0 800 1067" xmlns="http://www.w3.org/2000/svg">
+  <rect x="1" y="1" width="798" height="1065" fill="#FFFFFF" stroke="#D9D9D6" stroke-width="1.5"/>
+  <g transform="translate(345,430)" fill="none" stroke="#B0ACA1" stroke-width="3" stroke-linejoin="round">
+    <rect x="41" y="4" width="18" height="12" rx="2" fill="#B0ACA1" stroke="none"/>
+    <rect x="45" y="14" width="10" height="8" fill="#B0ACA1" stroke="none"/>
+    <path d="M30 22 C30 22 24 34 24 46 L24 122 C24 130 34 136 50 136 C66 136 76 130 76 122 L76 46 C76 34 70 22 70 22 Z"/>
+    <line x1="34" y1="72" x2="66" y2="72"/>
+  </g>
+  <text x="400" y="660" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#8A8578" text-anchor="middle" letter-spacing="1">Imagem em atualização</text>
+</svg>`;
+
+  await fs.writeFile(PLACEHOLDER_PATH, svg, 'utf-8');
+}
+
+// -----------------------------------------------------------------------------
+// GRAVA O RELATÓRIO FINAL EM import-report.json
+// -----------------------------------------------------------------------------
+async function writeReport(results, startTime) {
+  const encontrados = results.filter((r) => r.status === 'encontrado');
+  const naoEncontrados = results.filter((r) => r.status === 'nao-encontrado');
+  const erros = results.filter((r) => r.status === 'erro');
+
+  const report = {
+    executadoEm: new Date().toISOString(),
+    tempoExecucaoSegundos: Number(((Date.now() - startTime) / 1000).toFixed(2)),
+    totalPerfumes: results.length,
+    quantidadeImportada: encontrados.length,
+    encontrados: encontrados.map((r) => ({
+      nome: r.perfume.nome,
+      arquivo: r.arquivoSalvo,
+      url: r.url,
+      dimensoesOriginais: r.tamanhoOriginal,
+      tamanhoKb: r.tamanhoArquivoKb,
+    })),
+    naoEncontrados: naoEncontrados.map((r) => ({
+      nome: r.perfume.nome,
+      arquivo: `${r.perfume.arquivo}.webp`,
+      motivo: r.motivo,
+    })),
+    erros: erros.map((r) => ({
+      nome: r.perfume.nome,
+      arquivo: `${r.perfume.arquivo}.webp`,
+      erro: r.erro,
+    })),
+  };
+
+  await fs.writeFile(REPORT_PATH, JSON.stringify(report, null, 2), 'utf-8');
+  return report;
+}
+
+// -----------------------------------------------------------------------------
+// IMPRIME O RESUMO FINAL NO TERMINAL
+// -----------------------------------------------------------------------------
+function printSummary(report) {
+  console.log('\n' + color.bold(color.gold('═'.repeat(60))));
+  console.log(color.bold(color.gold('  ESSÊNCIA SUBLIME — RELATÓRIO DE IMPORTAÇÃO')));
+  console.log(color.bold(color.gold('═'.repeat(60))));
+  console.log(`  Total de perfumes processados : ${color.bold(report.totalPerfumes)}`);
+  console.log(`  ${color.green('Importados com sucesso')}       : ${color.bold(report.quantidadeImportada)}`);
+  console.log(`  ${color.yellow('Sem imagem encontrada')}        : ${color.bold(report.naoEncontrados.length)}`);
+  console.log(`  ${color.red('Erros durante o processo')}     : ${color.bold(report.erros.length)}`);
+  console.log(`  Tempo de execução              : ${report.tempoExecucaoSegundos}s`);
+  console.log(color.gray(`\n  Relatório completo salvo em: import-report.json`));
+  console.log(color.gray(`  Placeholder disponível em : images/perfumes/placeholder.svg`));
+  console.log(color.bold(color.gold('═'.repeat(60))) + '\n');
+}
+
+// -----------------------------------------------------------------------------
+// FUNÇÃO PRINCIPAL — orquestra todo o pipeline
+// -----------------------------------------------------------------------------
+async function main() {
+  const startTime = Date.now();
+
+  console.log(color.bold('\n🌸 Essência Sublime — Importação automatizada de imagens\n'));
+
+  try {
+    await ensureDir(OUTPUT_DIR);
+    logStep('Diretório de saída pronto: images/perfumes/');
+
+    await generatePlaceholderSvg();
+    logStep('Placeholder premium gerado/atualizado: placeholder.svg');
+
+    const perfumes = await loadPerfumes();
+    logStep(`${perfumes.length} perfumes carregados de perfumes.json\n`);
+
+    const imageSourcesMap = await loadImageSourcesMap();
+
+    // Processa em série (mais respeitoso com a fonte de imagens que em
+    // paralelo total). Se quiser paralelizar, troque por Promise.all em lotes.
+    const results = [];
+    for (const perfume of perfumes) {
+      const result = await processPerfume(perfume, imageSourcesMap);
+      results.push(result);
+    }
+
+    const report = await writeReport(results, startTime);
+    printSummary(report);
+
+    if (report.erros.length > 0) {
+      console.log(color.yellow('  Atenção: alguns perfumes tiveram erro durante o processo.'));
+      console.log(color.yellow('  Veja os detalhes em import-report.json → "erros".\n'));
+    }
+    if (report.naoEncontrados.length > 0) {
+      console.log(color.gray('  Os perfumes sem imagem usarão automaticamente o placeholder no site.\n'));
+    }
+  } catch (fatalErr) {
+    // Erro fatal = algo impediu o script de sequer começar (ex.: perfumes.json
+    // ausente/ inválido, ou impossibilidade de criar as pastas de saída).
+    console.error(color.red(`\n✕ Erro fatal: ${fatalErr.message}\n`));
+    process.exitCode = 1;
+  }
+}
+
+main();
