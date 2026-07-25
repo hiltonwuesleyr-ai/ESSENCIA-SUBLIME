@@ -1,0 +1,26 @@
+COMO ESTA PASTA FUNCIONA
+=========================
+
+Esta pasta é o destino final das fotos dos perfumes usadas pelo site
+(index.html procura automaticamente por images/perfumes/{id}.webp).
+
+Você NÃO precisa colocar as fotos aqui manualmente: rode o sistema de
+importação (veja /README.md, seção "Importar as fotos dos perfumes")
+e ele baixa, converte, otimiza e salva os arquivos .webp aqui sozinho.
+
+placeholder.svg é gerado automaticamente pelo script e usado pelo site
+sempre que a foto de um perfume ainda não existir — nunca fica vazio.
+
+Nomes de arquivo esperados (já configurados em /perfumes.json):
+
+MASCULINOS
+212-men.webp · 212-vip-black.webp · invictus.webp · one-million.webp
+sauvage.webp · bleu-chanel.webp · acqua-di-gio.webp · le-male.webp
+y-edp.webp · boss-bottled.webp · armani-code.webp · montblanc-explorer.webp
+azzaro-wanted.webp · terre-hermes.webp · versace-eros.webp
+
+FEMININOS
+good-girl.webp · la-vie-est-belle.webp · libre.webp · scandal.webp
+my-way.webp · jadore.webp · miss-dior.webp · flowerbomb.webp
+black-opium.webp · alien.webp · olympea.webp · 212-vip-rose.webp
+212-sexy.webp · coco-mademoiselle.webp · light-blue.webp
