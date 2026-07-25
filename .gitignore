@@ -1,0 +1,6 @@
+node_modules/
+import-report.json
+image-sources.json
+images/perfumes/*.webp
+!images/perfumes/placeholder.svg
+!images/perfumes/LEIA-ME.txt

@@ -1,0 +1,5 @@
+{
+  "_comentario": "Mapa manual OPCIONAL de arquivo -> URL da imagem. Copie este arquivo para 'image-sources.json' (sem o .example) e preencha as URLs que você tiver. O script sempre confere esse arquivo primeiro, antes de tentar qualquer integração automática configurada em scripts/import-images.js.",
+  "dior-sauvage": "https://exemplo.com/fotos/dior-sauvage.jpg",
+  "212-vip-black": "https://exemplo.com/fotos/212-vip-black.jpg"
+}
